@@ -19,6 +19,7 @@ nick =
     email: 'nick@gmail.com',
     phone_number: '1234567898',
     password: 'gizmo',
+    reviews: Review.find_by(id: 1),
   )
 
 puts 'New Locations......🏝️🏝️🏝️'
