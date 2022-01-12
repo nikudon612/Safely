@@ -5,3 +5,39 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.destroy_all
+Review.destroy_all
+TestingSite.destroy_all
+
+puts 'New Users......👥👥👥'
+
+nick =
+  User.create(
+    full_name: 'Nick Bechtel',
+    username: 'nickb',
+    email: 'nick@gmail.com',
+    phone_number: '1234567898',
+    password: 'gizmo',
+  )
+
+puts 'New Locations......🏝️🏝️🏝️'
+
+rapidnyc =
+  TestingSite.create(
+    name: 'Rapid NYC',
+    rating: 2,
+    location: 'address',
+    test_type: 'PCR & Antigen', # test_type: 'Antigen',
+  )
+
+puts 'New Reviews.......🗣️🗣️🗣️'
+
+review1 =
+  Review.create(
+    rating: 2,
+    comment:
+      'This place always has a long line. No structure to setup appointments.',
+    testing_sites_id: TestingSite.find_by(name: 'Rapid NYC').id,
+    user_id: User.find_by(username: 'nickb').id,
+  )

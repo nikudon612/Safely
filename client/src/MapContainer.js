@@ -8,7 +8,7 @@ import {
   InfoWindow,
 } from "@react-google-maps/api";
 
-export const MapContainer = () => {
+export const MapContainer = ({ array }) => {
   const [selected, setSelected] = useState({});
 
   const onSelect = (item) => {
@@ -41,25 +41,30 @@ export const MapContainer = () => {
         lat: 40.72675608568842,
         lng: -73.99195461335529,
       },
+      hours: "M-F 8am - 6pm",
     },
     {
-      name: "Location 4",
+      //40.70459689268391, -73.91756436820366
+      name: "Wyckoff Heights Medical Center",
       location: {
-        lat: 41.3797,
-        lng: 2.1682,
+        lat: 40.70459689268391,
+        lng: -73.91756436820366,
       },
+      hours: "M-F 8am - 6pm",
     },
     {
-      name: "Location 5",
+      //40.700339128774, -73.90835490586235
+      name: "Northwell Health-GoHealth",
       location: {
-        lat: 41.4055,
-        lng: 2.1915,
+        lat: 40.700339128774,
+        lng: -73.90835490586235,
       },
+      hours: "M-F 8am - 6pm",
     },
   ];
   const mapStyles = {
-    height: "100vh",
-    width: "100%",
+    height: "50vh",
+    width: "50%",
   };
 
   // DOWNTOWN MANHATTAN 40.72339745177747, -73.99893042815896
@@ -76,7 +81,7 @@ export const MapContainer = () => {
             <Marker
               key={item.name}
               position={item.location}
-              hours={item.hours}
+              // hours={item.hours}
             />
           );
         })}
@@ -85,6 +90,7 @@ export const MapContainer = () => {
             <Marker
               key={item.name}
               position={item.location}
+              // hours={item.hours}
               onClick={() => onSelect(item)}
             />
           );
@@ -95,8 +101,10 @@ export const MapContainer = () => {
             clickable={true}
             onCloseClick={() => setSelected({})}
           >
-            <p>{selected.name}</p>
-            <p>{selected.hours}</p>
+            <div>
+              <p>{selected.name}</p>
+              <p>{selected.hours}</p>
+            </div>
           </InfoWindow>
         )}
       </GoogleMap>
