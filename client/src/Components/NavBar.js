@@ -15,13 +15,16 @@ function NavBar({ user, setUser }) {
       <br />
       <ul>
         <li>
-          <Link to="/sites">TESTING LOCATIONS</Link>
+          Testing Locations
+          {/* <Link to="/sites">TESTING LOCATIONS</Link>
         </li>
         <li>
-          <Link to="/tests">TESTS</Link>
+          <Link to="/tests">TESTS</Link> */}
         </li>
+
         <li id="user_name">Hello, {user.full_name}</li>
         <li>
+          logout
           {user ? (
             <button onClick={handleLogoutClick} className="logout">
               LOGOUT
