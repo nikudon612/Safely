@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
-// import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import MapContainer from "./Components/MapContainer";
 import NavBar from "./Components/NavBar";
 import Login from "./Components/Login";
@@ -25,14 +25,32 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <NavBar user={user} setUser={setUser} />
-      </header>
-      {/* <MapContainer /> */}
-      <Login handleLogin={handleLogin} />
-      <SignUp setUser={setUser} />
-    </div>
+    // <h1>Hello, world</h1>
+    <>
+      <Switch>
+        <Route path="/signup" user={user} setUser={setUser}>
+          <SignUp />
+        </Route>
+        <Route path="/login" handleLogin={handleLogin}>
+          <Login />
+        </Route>
+        <Route path="/">
+          <div className="App">
+            <header className="App-header">
+              {/* <NavBar user={user} setUser={setUser} /> */}
+            </header>
+            <MapContainer />
+            {/* <Login handleLogin={handleLogin} />
+            <SignUp setUser={setUser} /> */}
+          </div>
+        </Route>
+        {/* </Switch>
+      <Switch> */}
+      </Switch>
+      {/* <main>
+        <h1>Hello, world</h1>
+      </main> */}
+    </>
   );
 }
 
