@@ -26,36 +26,34 @@ function Login({ handleLogin }) {
   }
 
   return (
-    <div>
-      <div className="login-bckg">
-        <div className="signContainer">
-          <div className="stack"></div>
+    <div className="signinPage">
+      <div className="signContainer">
+        <div className="stack"></div>
+        <br />
+        <form id="loginForm" onSubmit={handleSubmit}>
+          <p>USERNAME</p>
+          <input
+            className="username"
+            type="text"
+            onChange={(e) => setUsername(e.target.value)}
+            placeholder="username"
+          />
+          <p>PASSWORD</p>
+          <input
+            className="password"
+            type="password"
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="password"
+          />
           <br />
-          <form id="loginForm" onSubmit={handleSubmit}>
-            <p>USERNAME</p>
-            <input
-              className="username"
-              type="text"
-              onChange={(e) => setUsername(e.target.value)}
-              placeholder="username"
-            />
-            <p>PASSWORD</p>
-            <input
-              className="password"
-              type="password"
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="password"
-            />
-            <br />
-            <button onClick={handleClick} className="signIn" type="submit">
-              Sign In
-            </button>
-          </form>
+          <button onClick={handleClick} className="signIn" type="submit">
+            Sign In
+          </button>
+        </form>
 
-          <Link to="/SignUp" className="signUp">
-            <h5>Don't have an account yet? Sign up.</h5>
-          </Link>
-        </div>
+        <Link to="/SignUp" className="signUp">
+          <h5>Don't have an account yet? Sign up.</h5>
+        </Link>
       </div>
     </div>
   );
