@@ -24,7 +24,6 @@ function NavBar({ user, setUser }) {
 
         <li id="user_name">Hello, {user.full_name}</li>
         <li>
-          logout
           {user ? (
             <button onClick={handleLogoutClick} className="logout">
               LOGOUT

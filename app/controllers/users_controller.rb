@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[show update destroy]
+  # before_action :set_user, only: %i[show update destroy]
 
   # GET /users
   def index
@@ -17,7 +17,7 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    @user = User.create(user_params)
+    user = User.create(user_params)
 
     if user
       render json: user, status: :created

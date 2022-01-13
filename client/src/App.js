@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 // import { Switch, Route, Redirect } from "react-router-dom";
 import MapContainer from "./Components/MapContainer";
 import NavBar from "./Components/NavBar";
+import Login from "./Components/Login";
 
 function App() {
   //User state for login
@@ -26,8 +27,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         <NavBar user={user} setUser={setUser} />
-        <MapContainer />
       </header>
+      {/* <MapContainer /> */}
+      <Login handleLogin={handleLogin} />
     </div>
   );
 }
