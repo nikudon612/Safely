@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import MapContainer from "./Components/MapContainer";
 import NavBar from "./Components/NavBar";
 import Login from "./Components/Login";
+import SignUp from "./Components/SignUp";
 
 function App() {
   //User state for login
@@ -30,6 +31,7 @@ function App() {
       </header>
       {/* <MapContainer /> */}
       <Login handleLogin={handleLogin} />
+      <SignUp user={user} setUser={setUser} />
     </div>
   );
 }

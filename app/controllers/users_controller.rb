@@ -1,10 +1,7 @@
 class UsersController < ApplicationController
-  # before_action :set_user, only: %i[show update destroy]
-
   # GET /users
   def index
     users = User.all
-
     render json: users, status: :ok
   end
 
@@ -18,7 +15,6 @@ class UsersController < ApplicationController
   # POST /users
   def create
     user = User.create(user_params)
-
     if user
       render json: user, status: :created
     else
@@ -44,8 +40,6 @@ class UsersController < ApplicationController
         :phone_number,
         :password,
         :password_confirmation,
-        :reviews,
-        :results,
       )
   end
 end
