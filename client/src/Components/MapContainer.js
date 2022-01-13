@@ -23,6 +23,7 @@ export const MapContainer = ({ array }) => {
         lat: 40.70059352680852,
         lng: -73.91352288195964,
       },
+      address: "380 Grove Street, Ridgewood, NY",
       hours: "M-F 8am - 6pm",
     },
     {
@@ -32,6 +33,7 @@ export const MapContainer = ({ array }) => {
         lat: 40.71730731019591,
         lng: -73.99582819413783,
       },
+      address: "82 Bowery St, NYC, NY",
       hours: "M-F 8am - 6pm",
     },
     {
@@ -41,6 +43,7 @@ export const MapContainer = ({ array }) => {
         lat: 40.72675608568842,
         lng: -73.99195461335529,
       },
+      address: "348 Bowery St, NYC, NY",
       hours: "M-F 8am - 6pm",
     },
     {
@@ -50,6 +53,7 @@ export const MapContainer = ({ array }) => {
         lat: 40.70459689268391,
         lng: -73.91756436820366,
       },
+      address: "374 Stockholm St, Ridgewood, NY",
       hours: "M-F 8am - 6pm",
     },
     {
@@ -59,6 +63,7 @@ export const MapContainer = ({ array }) => {
         lat: 40.700339128774,
         lng: -73.90835490586235,
       },
+      address: "55-05 Myrtle Ave, Ridgewood, NY",
       hours: "M-F 8am - 6pm",
     },
   ];
@@ -103,6 +108,7 @@ export const MapContainer = ({ array }) => {
           >
             <div>
               <p>{selected.name}</p>
+              <p>{selected.address}</p>
               <p>{selected.hours}</p>
             </div>
           </InfoWindow>
