@@ -84,8 +84,8 @@ function SignUp({ setUser }) {
           placeholder="password"
         />
 
-        <div className="PasswordReq">
-          <h4>Password requirements</h4>
+        <div id="PasswordReq">
+          <p>Password requirements</p>
           <ul>
             <li>Must be a minimum of 8 characters.</li>
             <li>Must contain letters, numbers, and symbols.</li>
@@ -93,7 +93,7 @@ function SignUp({ setUser }) {
           </ul>
         </div>
         <button type="submit" className="signUP">
-          Sign Up
+          SIGN UP
         </button>
         <Link to="/login">
           <h5 className="closeButton">Already have an Account? Login here.</h5>
