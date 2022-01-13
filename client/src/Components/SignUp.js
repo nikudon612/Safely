@@ -17,11 +17,11 @@ function SignUp({ setUser }) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
+        full_name,
+        email,
+        phone_number,
         username,
         password,
-        email,
-        full_name,
-        phone_number,
         password_confirmation: passwordConfirmation,
       }),
     }).then((r) => {

@@ -31,7 +31,7 @@ function App() {
       </header>
       {/* <MapContainer /> */}
       <Login handleLogin={handleLogin} />
-      <SignUp user={user} setUser={setUser} />
+      <SignUp setUser={setUser} />
     </div>
   );
 }
