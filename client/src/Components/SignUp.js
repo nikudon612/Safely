@@ -92,12 +92,9 @@ function SignUp({ setUser }) {
             <li>Passwords must match.</li>
           </ul>
         </div>
-        <br />
-
         <button type="submit" className="signUP">
           Sign Up
         </button>
-        <br />
         <Link to="/login">
           <h5 className="closeButton">Already have an Account? Login here.</h5>
         </Link>

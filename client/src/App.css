@@ -54,13 +54,28 @@ li {
 .signupFORM {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+}
+
+.signupFORM input {
+  background: #ffffff;
+  opacity: 65%;
+  border-radius: 5px;
+  border: 0;
+  height: 30.71526336669922px;
+  width: 357.402099609375px;
+  left: 203.9691162109375px;
+  top: 259.1074981689453px;
+  border-radius: 0px;
 }
 
 .signContainer {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  margin-left: 350px;
+  margin-top: 133px;
 }
 
 .PasswordReq {
@@ -73,6 +88,18 @@ li {
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+#loginForm input {
+  background-color: #ffffff;
+  opacity: 65%;
+  border-radius: 5px;
+  border: 0;
+  height: 30.71526336669922px;
+  width: 357.402099609375px;
+  left: 203.9691162109375px;
+  top: 259.1074981689453px;
+  border-radius: 0px;
 }
 
 nav {
@@ -107,4 +134,24 @@ nav p {
 
 .logo {
   margin-left: 25px;
+}
+
+#login-bckg {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 250px;
+  margin-top: 250px;
+}
+
+.sisi {
+  display: flex;
+  margin-right: -1287px;
+  margin-top: 325px;
+  justify-content: space-around;
+  text-decoration: none;
+}
+
+.signinPage {
+  display: flex;
+  flex-direction: column;
 }

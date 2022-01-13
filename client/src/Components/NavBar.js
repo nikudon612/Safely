@@ -1,4 +1,4 @@
-import { Link, Route, Switch } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function NavBar({ user, setUser }) {
   // Handle Function for logout click in navbar
