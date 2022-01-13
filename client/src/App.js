@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 import MapContainer from "./Components/MapContainer";
 import NavBar from "./Components/NavBar";
+import NavLS from "./Components/NavLS";
 import Login from "./Components/Login";
 import SignUp from "./Components/SignUp";
 
@@ -30,22 +31,24 @@ function App() {
         <Switch>
           <Route path="/">
             <NavBar user={user} setUser={setUser} />
-            <MapContainer />
+            {/* <MapContainer /> */}
           </Route>
         </Switch>
       ) : (
         <Switch>
           <Route path="/signup" user={user} setUser={setUser}>
+            <NavLS />
             <SignUp />
           </Route>
           <Route path="/login" handleLogin={handleLogin}>
+            <NavLS />
             <Login />
           </Route>
-          <Route path="/">
+          {/* <Route path="/">
             <div className="App">
               <header className="App-header"></header>
-            </div>
-          </Route>
+            </div> */}
+          {/* </Route> */}
         </Switch>
       )}
     </>
