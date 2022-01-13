@@ -12,25 +12,24 @@ function NavBar({ user, setUser }) {
 
   return (
     <nav>
+      {/* Change this link to homepage after it's built */}
+      <Link className="logo" to="/">
+        SAFELY
+      </Link>
       <br />
-      <ul>
+      <ul id="menuList">
         <li>
-          Testing Locations
-          {/* <Link to="/sites">TESTING LOCATIONS</Link>
+          <Link to="/sites">TESTING LOCATIONS</Link>
         </li>
         <li>
-          <Link to="/tests">TESTS</Link> */}
+          <Link to="/tests">TESTS</Link>
         </li>
 
         <li id="user_name">Hello, {user.full_name}</li>
         <li>
-          {user ? (
-            <button onClick={handleLogoutClick} className="logout">
-              LOGOUT
-            </button>
-          ) : (
-            <></>
-          )}
+          <Link onClick={handleLogoutClick} className="logout">
+            LOGOUT
+          </Link>
         </li>
       </ul>
     </nav>
