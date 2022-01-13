@@ -25,31 +25,29 @@ function App() {
   }
 
   return (
-    // <h1>Hello, world</h1>
     <>
-      <Switch>
-        <Route path="/signup" user={user} setUser={setUser}>
-          <SignUp />
-        </Route>
-        <Route path="/login" handleLogin={handleLogin}>
-          <Login />
-        </Route>
-        <Route path="/">
-          <div className="App">
-            <header className="App-header">
-              {/* <NavBar user={user} setUser={setUser} /> */}
-            </header>
+      {user ? (
+        <Switch>
+          <Route path="/">
+            <NavBar user={user} setUser={setUser} />
             <MapContainer />
-            {/* <Login handleLogin={handleLogin} />
-            <SignUp setUser={setUser} /> */}
-          </div>
-        </Route>
-        {/* </Switch>
-      <Switch> */}
-      </Switch>
-      {/* <main>
-        <h1>Hello, world</h1>
-      </main> */}
+          </Route>
+        </Switch>
+      ) : (
+        <Switch>
+          <Route path="/signup" user={user} setUser={setUser}>
+            <SignUp />
+          </Route>
+          <Route path="/login" handleLogin={handleLogin}>
+            <Login />
+          </Route>
+          <Route path="/">
+            <div className="App">
+              <header className="App-header"></header>
+            </div>
+          </Route>
+        </Switch>
+      )}
     </>
   );
 }

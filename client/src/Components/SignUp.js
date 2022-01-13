@@ -34,10 +34,7 @@ function SignUp({ setUser }) {
   return (
     <div className="signContainer">
       <form className="signupFORM" onSubmit={handleSubmit}>
-        {/* <Link to="/SignIn">
-          <button className="closeButton">X</button>
-        </Link> */}
-        <br />
+        <p>NAME</p>
         <input
           className="fullName"
           type="text"
@@ -45,33 +42,39 @@ function SignUp({ setUser }) {
           placeholder="Full Name"
         />
 
-        <br />
+        <p>EMAIL</p>
+
         <input
           className="email"
           type="email"
           onChange={(e) => setEmail(e.target.value)}
           placeholder="123@me.com"
         />
-        <br />
+        <p>PHONE NUMBER</p>
+
         <input
           className="phoneNumber"
           type="tel"
           onChange={(e) => setPhoneNumber(e.target.value)}
           placeholder="+(000)-000-0000"
         />
-        <br />
+        <p>USERNAME</p>
+
         <input
           className="usernameSU"
           onChange={(e) => setUsername(e.target.value)}
           placeholder="username"
         />
-        <br />
+        <p>PASSWORD</p>
+
         <input
           className="passwordSU"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           placeholder="password"
         />
+        <p>PASSWORD CONFIRMATION</p>
+
         <input
           type="password"
           id="password_confirmation"
@@ -94,6 +97,10 @@ function SignUp({ setUser }) {
         <button type="submit" className="signUP">
           Sign Up
         </button>
+        <br />
+        <Link to="/login">
+          <h5 className="closeButton">Already have an Account? Login here.</h5>
+        </Link>
       </form>
     </div>
   );
