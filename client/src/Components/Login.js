@@ -31,14 +31,15 @@ function Login({ handleLogin }) {
         <div className="signContainer">
           <div className="stack"></div>
           <br />
-          <form onSubmit={handleSubmit}>
+          <form id="loginForm" onSubmit={handleSubmit}>
+            <p>USERNAME</p>
             <input
               className="username"
               type="text"
               onChange={(e) => setUsername(e.target.value)}
               placeholder="username"
             />
-            <br />
+            <p>PASSWORD</p>
             <input
               className="password"
               type="password"
@@ -51,9 +52,9 @@ function Login({ handleLogin }) {
             </button>
           </form>
 
-          {/* <Link to="/SignUp" className="signUp">
+          <Link to="/SignUp" className="signUp">
             <h5>Don't have an account yet? Sign up.</h5>
-          </Link> */}
+          </Link>
         </div>
       </div>
     </div>
