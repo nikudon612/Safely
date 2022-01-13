@@ -8,8 +8,14 @@ class UsersController < ApplicationController
   # GET /users/1
   def show
     user = User.find_by(id: session[:user_id])
-    session[:user_id] = user.id
-    render json: user, status: :ok
+    if user
+      render json: user, status: :ok
+    else
+      render json: { error: 'Not authorized' }, status: :unauthorized
+
+      # session[:user_id] = user.id
+      # render json: user, status: :ok
+    end
   end
 
   # POST /users
@@ -31,15 +37,13 @@ class UsersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def user_params
-    params
-      .require(:user)
-      .permit(
-        :full_name,
-        :username,
-        :email,
-        :phone_number,
-        :password,
-        :password_confirmation,
-      )
+    params.permit(
+      :full_name,
+      :username,
+      :email,
+      :phone_number,
+      :password,
+      :password_confirmation,
+    )
   end
 end

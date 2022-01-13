@@ -29,7 +29,7 @@ class TestingSitesController < ApplicationController
   # end
 
   # Only allow a list of trusted parameters through.
-  def testing_site_params
-    params.require(:testing_site).permit(:rating, :location, :reviews)
-  end
+  # def testing_site_params
+  #   params.require(:testing_site).permit(:rating, :location, :reviews)
+  # end
 end
