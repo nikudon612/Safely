@@ -1,7 +1,6 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
-import MapContainer from "./Components/MapContainer";
 import NavBar from "./Components/NavBar";
 import NavLS from "./Components/NavLS";
 import Login from "./Components/Login";
@@ -31,14 +30,19 @@ function App() {
     <>
       {user ? (
         <Switch>
+          {/* <Route exact path="/tests">
+            <NavBar user={user} setUser={setUser} />
+            <Tests />
+          </Route> */}
+          <Route exact path="/sites">
+            <NavBar user={user} setUser={setUser} />
+            <Sites />
+          </Route>
           <Route path="/">
             <NavBar user={user} setUser={setUser} />
             <div id="homepageContainer">
               <Results />
             </div>
-          </Route>
-          <Route path="/sites">
-            <Sites />
           </Route>
         </Switch>
       ) : (
@@ -47,7 +51,6 @@ function App() {
             <NavLS />
             <SignUp />
           </Route>
-          {/* <Route path="/" handleLogin={handleLogin}> */}
           <Route path="/">
             <NavLS />
             <Login handleLogin={handleLogin} />
