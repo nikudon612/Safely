@@ -230,13 +230,21 @@ nav p {
   display: flex;
   justify-content: flex-end;
   margin-top: 20px;
+  width: 50%;
+}
+
+.resultsPage {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
 #resultsContainer {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-left: 115px;
+  /* margin-left: 115px; */
+  width: 50%;
 }
 
 #searchbox {
@@ -244,6 +252,8 @@ nav p {
   width: 50%;
   background: #f1f1f1;
   opacity: 55%;
+  height: 86.66667938232422px;
+  border-radius: 0px;
 }
 
 #search {
@@ -251,6 +261,7 @@ nav p {
   opacity: 95%;
   border: none;
 }
+
 /* .resultsPage {
   width: 50%;
   height: 91vh;
