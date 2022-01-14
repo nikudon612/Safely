@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     render json: users, status: :ok
   end
 
-  # GET /users/1
+  # GET /users/1rails
   def show
     user = User.find_by(id: session[:user_id])
     if user

@@ -155,16 +155,17 @@ nav {
   justify-content: center;
   column-gap: 20px;
   margin-right: 100px;
+  font-weight: normal;
 }
 
 nav a {
   text-decoration: none;
   color: black;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 nav li {
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 nav p {
@@ -174,6 +175,7 @@ nav p {
 .logo {
   margin-left: 45px;
   font-size: xx-large;
+  font-weight: bold;
 }
 
 #menuList a {
@@ -227,4 +229,36 @@ nav p {
 #map {
   display: flex;
   justify-content: flex-end;
+  margin-top: 20px;
 }
+
+#resultsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 115px;
+}
+
+#searchbox {
+  border: black;
+  width: 50%;
+  background: #f1f1f1;
+  opacity: 55%;
+}
+
+#search {
+  background: #f1f1f1;
+  opacity: 95%;
+  border: none;
+}
+/* .resultsPage {
+  width: 50%;
+  height: 91vh;
+} */
+/* 
+.homepageContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+} */
