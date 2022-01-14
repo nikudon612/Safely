@@ -310,12 +310,36 @@ a {
   justify-content: space-around;
 }
 
-#resultcard {
+#resultscard {
   height: 330.25140380859375px;
   width: 586.5px;
   border-radius: 5px;
   background: #ffffff;
   margin-top: 10px;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid rgb(122, 34, 238);
+  box-shadow: 0px 4px 4px rgb(54, 54, 54);
+}
+
+.resultinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.resulttitle {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+.testtype {
+  font-size: x-large;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  border: 1px solid black;
 }
 /* 
 .homepageContainer {
