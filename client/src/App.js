@@ -45,9 +45,10 @@ function App() {
             <NavLS />
             <SignUp />
           </Route>
-          <Route path="/" handleLogin={handleLogin}>
+          {/* <Route path="/" handleLogin={handleLogin}> */}
+          <Route path="/" >
             <NavLS />
-            <Login />
+            <Login  handleLogin={handleLogin}/>
           </Route>
           {/* <Route path="/">
             <div className="App">
