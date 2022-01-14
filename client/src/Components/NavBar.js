@@ -25,7 +25,7 @@ function NavBar({ user, setUser }) {
           <Link to="/tests">TESTS</Link>
         </li>
 
-        <li id="user_name">Hello, {user.full_name}</li>
+        <li id="user_name">HELLO, {user.full_name}</li>
         <li>
           <Link onClick={handleLogoutClick} className="logout">
             LOGOUT

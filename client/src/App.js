@@ -6,6 +6,7 @@ import NavBar from "./Components/NavBar";
 import NavLS from "./Components/NavLS";
 import Login from "./Components/Login";
 import SignUp from "./Components/SignUp";
+// import Sisi from "./Components/Sisi";
 
 function App() {
   //User state for login
@@ -31,7 +32,7 @@ function App() {
         <Switch>
           <Route path="/">
             <NavBar user={user} setUser={setUser} />
-            {/* <MapContainer /> */}
+            <MapContainer />
           </Route>
         </Switch>
       ) : (
@@ -40,7 +41,7 @@ function App() {
             <NavLS />
             <SignUp />
           </Route>
-          <Route path="/login" handleLogin={handleLogin}>
+          <Route path="/" handleLogin={handleLogin}>
             <NavLS />
             <Login />
           </Route>
