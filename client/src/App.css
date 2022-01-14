@@ -4,10 +4,9 @@ body {
   background-repeat: no-repeat;
   /* background-size: 100%; */
   background-size: cover;
-
 }
 
-html{
+html {
   height: 100%;
 }
 .App {
@@ -236,6 +235,13 @@ nav p {
   display: flex;
   justify-content: flex-end;
   margin-top: 20px;
+  /* width: 50%; */
+}
+
+.resultsPage {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
 #resultsContainer {
@@ -249,35 +255,39 @@ nav p {
   /* width: 62%; */
   background: #f1f1f1;
   opacity: 55%;
+  height: 86.66667938232422px;
+  border-radius: 0px;
 }
 
 #search {
-
   width: 90%;
   background: #f1f1f1;
   opacity: 95%;
   border: none;
   height: 25px;
-/*   
+  /*   
   background: #f1f1f1;
   opacity: 95%;
   border: none; */
 }
 
-
-signupFORM h5 {
+.signupFORM h5 {
   /* display: flex; */
   /* flex-direction: column; */
   /* margin-top: -45px; */
   align-items: center;
-  align-content: center;}
+  align-content: center;
+}
 
+a {
+  text-decoration: none;
+}
 
-a {text-decoration: none;}
-/* .resultsPage {
-  width: 50%;
-  height: 91vh;
-} */
+.resultsPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
 /* 
 .homepageContainer {
   display: flex;
@@ -286,15 +296,12 @@ a {text-decoration: none;}
   justify-content: flex-end;
 } */
 
-
 /*--MAP------------
 /* 
 height: 89vh;
 width: 115%;
 position: relative;
 overflow: hidden;  */
-
-
 
 /* 
 height: 100%;
@@ -303,7 +310,6 @@ position: absolute;
 top: 0px;
 left: 0px;
 background-color: rgb(229, 227, 223); */
-
 
 /* display: flex;
 justify-content: flex-end;
