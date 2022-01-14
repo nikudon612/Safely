@@ -247,6 +247,7 @@ nav p {
 #resultsContainer {
   width: 70%;
   height: 39%;
+  border: 1px solid black;
 }
 
 #searchbox {
@@ -257,6 +258,9 @@ nav p {
   opacity: 55%;
   height: 86.66667938232422px;
   border-radius: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #search {
@@ -269,6 +273,23 @@ nav p {
   background: #f1f1f1;
   opacity: 95%;
   border: none; */
+  margin-left: 200px;
+}
+
+#urLocation {
+  margin-left: 200px;
+}
+
+#resultsbox {
+  height: 75vh;
+  width: 51.75vw;
+  left: 0px;
+  top: 201.6666259765625px;
+  background: #f1f1f1;
+  opacity: 55%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
 }
 
 .signupFORM h5 {
@@ -287,6 +308,14 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+}
+
+#resultcard {
+  height: 330.25140380859375px;
+  width: 586.5px;
+  border-radius: 5px;
+  background: #ffffff;
+  margin-top: 10px;
 }
 /* 
 .homepageContainer {

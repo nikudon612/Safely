@@ -7,6 +7,7 @@ import {
   Marker,
   InfoWindow,
 } from "@react-google-maps/api";
+import ResultCards from "./ResultCards";
 
 export const MapContainer = ({ array }) => {
   const [selected, setSelected] = useState({});
@@ -80,12 +81,14 @@ export const MapContainer = ({ array }) => {
 
   return (
     <div id="map">
-       <div id="resultsContainer">
+      <div id="resultsContainer">
         <div id="searchbox">
           <div id="urLocation">Your Location</div>
           <input id="search" placeholder="Enter your City or Zip"></input>
         </div>
-        <div id="resultsbox"></div>
+        <div id="resultsbox">
+          <ResultCards />
+        </div>
       </div>
       <LoadScript googleMapsApiKey="AIzaSyBYWFT1yL5ChgLP0C9KlDuc9yzZKfZUzt8">
         <GoogleMap
