@@ -247,6 +247,7 @@ nav p {
 #resultsContainer {
   width: 70%;
   height: 39%;
+  border: 1px solid black;
 }
 
 #searchbox {
@@ -257,6 +258,9 @@ nav p {
   opacity: 55%;
   height: 86.66667938232422px;
   border-radius: 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #search {
@@ -269,6 +273,11 @@ nav p {
   background: #f1f1f1;
   opacity: 95%;
   border: none; */
+  margin-left: 200px;
+}
+
+#urLocation {
+  margin-left: 200px;
 }
 
 .signupFORM h5 {
