@@ -69,7 +69,7 @@ export const MapContainer = ({ array }) => {
   ];
   const mapStyles = {
     height: "89vh",
-    width: "50%",
+    width: "65%",
   };
 
   // DOWNTOWN MANHATTAN 40.72339745177747, -73.99893042815896
@@ -80,6 +80,13 @@ export const MapContainer = ({ array }) => {
 
   return (
     <div id="map">
+       <div id="resultsContainer">
+        <div id="searchbox">
+          <div id="urLocation">Your Location</div>
+          <input id="search" placeholder="Enter your City or Zip"></input>
+        </div>
+        <div id="resultsbox"></div>
+      </div>
       <LoadScript googleMapsApiKey="AIzaSyBYWFT1yL5ChgLP0C9KlDuc9yzZKfZUzt8">
         <GoogleMap
           mapContainerStyle={mapStyles}
