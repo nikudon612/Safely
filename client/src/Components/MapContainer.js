@@ -68,7 +68,7 @@ export const MapContainer = ({ array }) => {
     },
   ];
   const mapStyles = {
-    height: "91vh",
+    height: "89vh",
     width: "50%",
   };
 

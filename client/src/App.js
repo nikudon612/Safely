@@ -6,6 +6,7 @@ import NavBar from "./Components/NavBar";
 import NavLS from "./Components/NavLS";
 import Login from "./Components/Login";
 import SignUp from "./Components/SignUp";
+import Results from "./Components/Results";
 // import Sisi from "./Components/Sisi";
 
 function App() {
@@ -32,7 +33,10 @@ function App() {
         <Switch>
           <Route path="/">
             <NavBar user={user} setUser={setUser} />
-            <MapContainer />
+            <div id="homepageContainer">
+              <Results />
+              {/* <MapContainer /> */}
+            </div>
           </Route>
         </Switch>
       ) : (
