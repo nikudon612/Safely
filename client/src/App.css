@@ -280,6 +280,18 @@ nav p {
   margin-left: 200px;
 }
 
+#resultsbox {
+  height: 75vh;
+  width: 51.75vw;
+  left: 0px;
+  top: 201.6666259765625px;
+  background: #f1f1f1;
+  opacity: 55%;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+}
+
 .signupFORM h5 {
   /* display: flex; */
   /* flex-direction: column; */
@@ -296,6 +308,14 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+}
+
+#resultcard {
+  height: 330.25140380859375px;
+  width: 586.5px;
+  border-radius: 5px;
+  background: #ffffff;
+  margin-top: 10px;
 }
 /* 
 .homepageContainer {
