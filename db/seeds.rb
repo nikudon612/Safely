@@ -28,7 +28,8 @@ rapidnyc =
   TestingSite.create(
     name: 'Rapid NYC',
     rating: 2,
-    location: 'address',
+    location: '380 Grove St, Ridgewood, NY',
+  
     test_type: 'PCR & Antigen', # test_type: 'Antigen',
   )
 
