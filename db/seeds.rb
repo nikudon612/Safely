@@ -39,6 +39,6 @@ review1 =
     rating: 2,
     comment:
       'This place always has a long line. No structure to setup appointments.',
-    testing_sites_id: TestingSite.find_by(name: 'Rapid NYC').id,
+    testing_site_id: TestingSite.find_by(name: 'Rapid NYC').id,
     user_id: User.find_by(username: 'nickb').id,
   )

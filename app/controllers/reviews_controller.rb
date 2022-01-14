@@ -1,10 +1,9 @@
 class ReviewsController < ApplicationController
-  before_action :set_review, only: %i[show update destroy]
+  # before_action :set_review, only: %i[show update destroy]
 
   # GET /reviews
   def index
     reviews = Review.all
-
     render json: reviews
   end
 
@@ -30,8 +29,7 @@ class ReviewsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def review_params
-    params
-      .require(:review)
-      .permit(:rating, :comment, :user_id, :testing_sites_id)
+    params # .require(:review)
+      .permit(:rating, :comment, :user_id, :testing_site_id)
   end
 end

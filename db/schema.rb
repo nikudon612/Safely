@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2022_01_12_164350) do
     t.integer "rating"
     t.string "comment"
     t.integer "user_id"
-    t.integer "testing_sites_id"
+    t.integer "testing_site_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

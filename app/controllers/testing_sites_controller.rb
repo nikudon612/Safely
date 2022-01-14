@@ -1,13 +1,13 @@
 class TestingSitesController < ApplicationController
   # before_action :set_testing_site, only: [:show, :update, :destroy]
 
-  # GET /testing_sites
+  # GET /sites
   def index
     sites = TestingSite.all
     render json: sites, status: :ok
   end
 
-  # GET /testing_sites/1
+  # GET /sites/1
   def show
     site = TestingSite.find_by(id: params[:id])
     render json: site, status: :ok
