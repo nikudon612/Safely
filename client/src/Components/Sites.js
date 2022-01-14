@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import SitesDisplay from "./SitesDisplay";
 
 function Sites() {
   const [siteLists, setSiteLists] = useState([]);
@@ -11,7 +12,9 @@ function Sites() {
   }, []);
   return (
     <div>
-      <h1>Hello World</h1>
+      <div>
+        <SitesDisplay siteLists={siteLists} />
+      </div>
     </div>
   );
 }

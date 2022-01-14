@@ -1,3 +1,3 @@
 class TestingSiteSerializer < ActiveModel::Serializer
-  attributes :id, :rating, :location, :reviews
+  attributes :id, :name, :rating, :location, :reviews
 end

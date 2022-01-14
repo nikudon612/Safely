@@ -8,6 +8,7 @@ import {
   InfoWindow,
 } from "@react-google-maps/api";
 import ResultCards from "./ResultCards";
+import Sites from "./Sites";
 
 export const MapContainer = ({ array }) => {
   const [selected, setSelected] = useState({});
@@ -87,7 +88,8 @@ export const MapContainer = ({ array }) => {
           <input id="search" placeholder="Enter your City or Zip"></input>
         </div>
         <div id="resultsbox">
-          <ResultCards />
+          <Sites />
+          {/* <ResultCards /> */}
         </div>
       </div>
       <LoadScript googleMapsApiKey="AIzaSyBYWFT1yL5ChgLP0C9KlDuc9yzZKfZUzt8">
