@@ -68,7 +68,7 @@ export const MapContainer = ({ array }) => {
     },
   ];
   const mapStyles = {
-    height: "50vh",
+    height: "91vh",
     width: "50%",
   };
 
@@ -79,42 +79,48 @@ export const MapContainer = ({ array }) => {
   };
 
   return (
-    <LoadScript googleMapsApiKey="AIzaSyBYWFT1yL5ChgLP0C9KlDuc9yzZKfZUzt8">
-      <GoogleMap mapContainerStyle={mapStyles} zoom={13} center={defaultCenter}>
-        {locations.map((item) => {
-          return (
-            <Marker
-              key={item.name}
-              position={item.location}
-              // hours={item.hours}
-            />
-          );
-        })}
-        {locations.map((item) => {
-          return (
-            <Marker
-              key={item.name}
-              position={item.location}
-              // hours={item.hours}
-              onClick={() => onSelect(item)}
-            />
-          );
-        })}
-        {selected.location && (
-          <InfoWindow
-            position={selected.location}
-            clickable={true}
-            onCloseClick={() => setSelected({})}
-          >
-            <div>
-              <p>{selected.name}</p>
-              <p>{selected.address}</p>
-              <p>{selected.hours}</p>
-            </div>
-          </InfoWindow>
-        )}
-      </GoogleMap>
-    </LoadScript>
+    <div id="map">
+      <LoadScript googleMapsApiKey="AIzaSyBYWFT1yL5ChgLP0C9KlDuc9yzZKfZUzt8">
+        <GoogleMap
+          mapContainerStyle={mapStyles}
+          zoom={13}
+          center={defaultCenter}
+        >
+          {locations.map((item) => {
+            return (
+              <Marker
+                key={item.name}
+                position={item.location}
+                // hours={item.hours}
+              />
+            );
+          })}
+          {locations.map((item) => {
+            return (
+              <Marker
+                key={item.name}
+                position={item.location}
+                // hours={item.hours}
+                onClick={() => onSelect(item)}
+              />
+            );
+          })}
+          {selected.location && (
+            <InfoWindow
+              position={selected.location}
+              clickable={true}
+              onCloseClick={() => setSelected({})}
+            >
+              <div>
+                <p>{selected.name}</p>
+                <p>{selected.address}</p>
+                <p>{selected.hours}</p>
+              </div>
+            </InfoWindow>
+          )}
+        </GoogleMap>
+      </LoadScript>
+    </div>
   );
 };
 export default MapContainer;

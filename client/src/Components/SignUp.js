@@ -32,73 +32,82 @@ function SignUp({ setUser }) {
   }
 
   return (
-    <div className="signContainer">
-      <form className="signupFORM" onSubmit={handleSubmit}>
-        <p>NAME</p>
-        <input
-          className="fullName"
-          type="text"
-          onChange={(e) => setFullName(e.target.value)}
-          placeholder="Full Name"
-        />
+    <div className="signUpPage">
+      <div className="signContainerS">
+        <form className="signupFORM" onSubmit={handleSubmit}>
+          <p>NAME</p>
+          <input
+            className="fullName"
+            type="text"
+            onChange={(e) => setFullName(e.target.value)}
+            placeholder="Full Name"
+          />
 
-        <p>EMAIL</p>
+          <p>EMAIL</p>
 
-        <input
-          className="email"
-          type="email"
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="123@me.com"
-        />
-        <p>PHONE NUMBER</p>
+          <input
+            className="email"
+            type="email"
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="123@me.com"
+          />
+          <p>PHONE NUMBER</p>
 
-        <input
-          className="phoneNumber"
-          type="tel"
-          onChange={(e) => setPhoneNumber(e.target.value)}
-          placeholder="+(000)-000-0000"
-        />
-        <p>USERNAME</p>
+          <input
+            className="phoneNumber"
+            type="tel"
+            onChange={(e) => setPhoneNumber(e.target.value)}
+            placeholder="+(000)-000-0000"
+          />
+          <p>USERNAME</p>
 
-        <input
-          className="usernameSU"
-          onChange={(e) => setUsername(e.target.value)}
-          placeholder="username"
-        />
-        <p>PASSWORD</p>
+          <input
+            className="usernameSU"
+            onChange={(e) => setUsername(e.target.value)}
+            placeholder="username"
+          />
+          <p>PASSWORD</p>
 
-        <input
-          className="passwordSU"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="password"
-        />
-        <p>PASSWORD CONFIRMATION</p>
+          <input
+            className="passwordSU"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="password"
+          />
+          <p>PASSWORD CONFIRMATION</p>
 
-        <input
-          type="password"
-          id="password_confirmation"
-          value={passwordConfirmation}
-          onChange={(e) => setPasswordConfirmation(e.target.value)}
-          autoComplete="current-password"
-          placeholder="password"
-        />
+          <input
+            type="password"
+            id="password_confirmation"
+            value={passwordConfirmation}
+            onChange={(e) => setPasswordConfirmation(e.target.value)}
+            autoComplete="current-password"
+            placeholder="password"
+          />
 
-        <div id="PasswordReq">
-          <p>Password requirements</p>
-          <ul>
-            <li>Must be a minimum of 8 characters.</li>
-            <li>Must contain letters, numbers, and symbols.</li>
-            <li>Passwords must match.</li>
-          </ul>
-        </div>
-        <button type="submit" className="signUP">
-          SIGN UP
-        </button>
-        <Link to="/login">
-          <h5 className="closeButton">Already have an Account? Login here.</h5>
-        </Link>
-      </form>
+          <div id="PasswordReq">
+            <p>Password requirements</p>
+            <ul>
+              <li>Must be a minimum of 8 characters.</li>
+              <li>Must contain letters, numbers, and symbols.</li>
+              <li>Passwords must match.</li>
+            </ul>
+          </div>
+          <button type="submit" className="signUP">
+            SIGN UP
+          </button>
+          <Link to="/login">
+            <h5 className="closeButton">
+              Already have an Account? Login here.
+            </h5>
+          </Link>
+        </form>
+      </div>
+      <div id="sisiS">
+        <a href="https://sisiyuart.com/">
+          <p>Art by Sisi Yu</p>
+        </a>
+      </div>
     </div>
   );
 }

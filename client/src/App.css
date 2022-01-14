@@ -1,6 +1,8 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-image: url("./images/GD1.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 .App {
@@ -53,6 +55,13 @@ li {
   text-decoration: none;
 }
 
+.signMessage {
+  display: flex;
+  justify-content: center;
+  color: black;
+  /* text-decoration: none; */
+}
+
 .signUP {
   color: black;
   background: #ffffff;
@@ -60,14 +69,18 @@ li {
   border-radius: 5px;
   border: 0;
   height: 30.71526336669922px;
+  width: 357.402099609375px;
+
   font-weight: bold;
+  cursor: pointer;
 }
 
 .signupFORM {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   margin-top: -45px;
+  align-items: flex-start;
+  align-content: center;
 }
 
 .signupFORM input {
@@ -82,7 +95,16 @@ li {
   border-radius: 0px;
 }
 
-.signContainer {
+.signContainerL {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 350px;
+  margin-top: 133px;
+}
+
+.signContainerS {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -93,8 +115,10 @@ li {
 
 #PasswordReq {
   display: flex;
-  align-items: center;
   flex-direction: column;
+  opacity: 50%;
+  font-size: small;
+  align-items: center;
   opacity: 50%;
   font-size: small;
 }
@@ -163,15 +187,44 @@ nav p {
   margin-top: 250px;
 }
 
-.sisi {
-  display: flex;
-  margin-right: -1287px;
-  margin-top: 325px;
-  justify-content: space-around;
-  text-decoration: none;
-}
-
 .signinPage {
   display: flex;
   flex-direction: column;
+}
+
+.signInL {
+  color: black;
+  background: #ffffff;
+  opacity: 65%;
+  border-radius: 5px;
+  border: 0;
+  height: 30.71526336669922px;
+  width: 357.402099609375px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.forgot {
+  color: black;
+  opacity: 50%;
+}
+
+#sisiL {
+  display: flex;
+  justify-content: flex-end;
+  align-content: flex-end;
+  margin-right: 85px;
+  margin-top: 300px;
+}
+
+#sisiS {
+  display: flex;
+  justify-content: flex-end;
+  align-content: flex-end;
+  margin-right: 85px;
+}
+
+#map {
+  display: flex;
+  justify-content: flex-end;
 }

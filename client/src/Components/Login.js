@@ -27,7 +27,7 @@ function Login({ handleLogin }) {
 
   return (
     <div className="signinPage">
-      <div className="signContainer">
+      <div className="signContainerL">
         <div className="stack"></div>
         <br />
         <form id="loginForm" onSubmit={handleSubmit}>
@@ -45,15 +45,20 @@ function Login({ handleLogin }) {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="password"
           />
-          <br />
-          <button onClick={handleClick} className="signIn" type="submit">
-            Sign In
+          <h5 className="forgot">forgot password?</h5>
+          <button onClick={handleClick} className="signInL" type="submit">
+            SIGN IN
           </button>
         </form>
 
-        <Link to="/SignUp" className="signUp">
+        <Link to="/SignUp" className="signMessage">
           <h5>Don't have an account yet? Sign up.</h5>
         </Link>
+      </div>
+      <div id="sisiL">
+        <a href="https://sisiyuart.com/">
+          <p>Art by Sisi Yu</p>
+        </a>
       </div>
     </div>
   );
