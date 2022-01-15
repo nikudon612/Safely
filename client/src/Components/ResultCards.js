@@ -3,8 +3,8 @@ function ResultCards({ site, name, rating, location, hours }) {
     <div id="resultscard">
       <div className="resultinfo">
         <div className="sitecontainer">
-          <span>{name}</span>
-          <span>{rating}</span>
+          <span className="sitename">{name}</span>
+          <span>RATING: {rating}</span>
           <span>{location}</span>
           <span>{hours}</span>
         </div>
@@ -17,7 +17,7 @@ function ResultCards({ site, name, rating, location, hours }) {
 export default ResultCards;
 
 // {
-  /* <div className="resulttitle">TESTING SITE 1</div>
+/* <div className="resulttitle">TESTING SITE 1</div>
         <div className="resultrating">RATING: 3</div>
         <div className="resultlocation">55-05 Myrtle Ave, Ridgewood, NY</div>
         <div className="resulthours">HOURS: M-F 8am - 6pm </div> */

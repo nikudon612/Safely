@@ -29,7 +29,20 @@ rapidnyc =
     name: 'Rapid NYC',
     rating: 2,
     location: '380 Grove St, Ridgewood, NY',
-  
+    test_type: 'PCR & Antigen', # test_type: 'Antigen',
+  )
+northwell =
+  TestingSite.create(
+    name: 'Northwell Health',
+    rating: 4,
+    location: '55-05 Myrtle Ave, Ridgewood, NY',
+    test_type: 'PCR & Antigen', # test_type: 'Antigen',
+  )
+dragonfly =
+  TestingSite.create(
+    name: 'Dragonfly PHD',
+    rating: 3,
+    location: '315 Wyckoff Ave, Brooklyn, NY',
     test_type: 'PCR & Antigen', # test_type: 'Antigen',
   )
 
@@ -41,5 +54,21 @@ review1 =
     comment:
       'This place always has a long line. No structure to setup appointments.',
     testing_site_id: TestingSite.find_by(name: 'Rapid NYC').id,
+    user_id: User.find_by(username: 'nickb').id,
+  )
+review2 =
+  Review.create(
+    rating: 4,
+    comment:
+      'Standard clinic. Clean, fast, and professional. If you can get there before the busy times - you will be in and out quickly.',
+    testing_site_id: TestingSite.find_by(name: 'Northwell Health').id,
+    user_id: User.find_by(username: 'nickb').id,
+  )
+review3 =
+  Review.create(
+    rating: 3,
+    comment:
+      'Testing truck location! Usually a long line around the corner. No real way to make an appointment but you receive your results very quickly. Sometimes even same day!',
+    testing_site_id: TestingSite.find_by(name: 'Dragonfly PHD').id,
     user_id: User.find_by(username: 'nickb').id,
   )
