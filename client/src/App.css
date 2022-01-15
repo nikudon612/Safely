@@ -293,6 +293,7 @@ nav p {
   overflow: scroll;
   z-index: 1;
   flex-direction: column;
+  align-items: center;
 }
 
 .signupFORM h5 {
@@ -346,6 +347,11 @@ a {
   flex-direction: row;
   justify-content: center;
   border: 1px solid black;
+  margin-top: 63px;
+  border-radius: 10px;
+  height: 100px;
+  align-items: center;
+  font-weight: bold;
 }
 
 .sitecontainer {
@@ -353,6 +359,11 @@ a {
   flex-direction: column;
   align-items: center;
   line-height: 30px;
+}
+
+.sitename {
+  font-weight: bold;
+  font-size: x-large;
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
