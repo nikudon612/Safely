@@ -366,6 +366,51 @@ a {
   font-size: x-large;
 }
 
+.testbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 75px;
+}
+
+.testcard {
+  height: 478.99999606608617px;
+  width: 833.9999773502204px;
+  left: nullpx;
+  top: nullpx;
+  border-radius: 5px;
+
+  background: rgba(255, 255, 255, 0.4);
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+.testtitle {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 28px;
+
+  color: #000000;
+
+  margin-top: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.testcontent {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+
+  color: #000000;
+
+  margin-top: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 .homepageContainer {
   display: flex;
