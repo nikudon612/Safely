@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 2022_01_12_164350) do
     t.string "name"
     t.integer "rating"
     t.string "location"
+    t.string "contact"
+    t.string "hours"
     t.string "test_type"
     t.integer "reviews"
     t.datetime "created_at", precision: 6, null: false
