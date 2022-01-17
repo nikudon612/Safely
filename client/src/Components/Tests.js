@@ -30,12 +30,10 @@ function Tests() {
           more...
         </div>
       </div>
-
       <br />
       <br />
       <br />
       <br />
-
       <div className="testcard">
         <div className="testtitle">OVERVIEW ON COVID 19 TESTING </div>
         <br />
@@ -71,7 +69,6 @@ function Tests() {
       <br />
       <br />
       <br />
-
       <div className="testcard" id="faqcard">
         <div className="testtitle">FAQ</div>
         <br />
@@ -113,7 +110,11 @@ function Tests() {
       <br />
       <br />
       <br />
-      {/* </div> */}
+      <div id="sisiLearn">
+        <a href="https://sisiyuart.com/">
+          <p>Art by Sisi Yu</p>
+        </a>
+      </div>{" "}
     </div>
   );
 }
