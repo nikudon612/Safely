@@ -8,22 +8,21 @@ function Tests() {
         <div className="testcontent">
           <div className="testq">PCR</div>
           <br />
-          <br />
           PCR tests (or “molecular tests”) are the gold standard in COVID-19
           testing. They’re the most widely available and reliable type of test.
           See more...
           <br />
           <br />
-          <div className="testq">ANTIGEN</div>
           <br />
+          <div className="testq">ANTIGEN</div>
           <br />
           Antigen tests (or “rapid tests”) are usually available at emergency
           locations. They provide results within minutes but tend to be less
           accurate than their counterparts. See more...
           <br />
           <br />
-          <div className="testq">ANTIBODY</div>
           <br />
+          <div className="testq">ANTIBODY</div>
           <br />
           Antibody tests detect to the presence of antibodies that countered
           SARS-CoV-2 in the patients body. This is the type of test you should
@@ -82,7 +81,6 @@ function Tests() {
             What do I do?
           </div>
           <br />
-          <br />
           This is the reason this website was created! You can find a COVID-19
           testing location near you: Visit our homepage and let us know where
           you’d like to get tested. Press the search button after entering your
@@ -95,7 +93,6 @@ function Tests() {
             How often should I get tested during my trip?
           </div>
           <br />
-          <br />
           The CDC recommends that travelers get tested 1-3 days before
           traveling, and 3-5 days after they’ve returned to their home. It’s
           also wise to self-quarantine before and after your trip.
@@ -105,7 +102,6 @@ function Tests() {
             I found a testing location near me, but some of their information
             was incorrect. What should I do?
           </div>
-          <br />
           <br />
           If you find that any inaccurate information on our site, feel free to
           contact us and we will fix it ASAP. Some testing locations such as
