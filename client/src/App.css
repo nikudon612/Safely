@@ -463,6 +463,7 @@ a {
   justify-content: center;
   align-items: center;
   margin-top: 165px;
+  flex-direction: column;
 }
 
 #searchb {
@@ -499,9 +500,9 @@ a {
 #urLocation2 {
 }
 
-#search2 {
+#searchy {
   width: 200px;
-  /* background: #f1f1f1; */
+  background: transparent;
   /* opacity: 95%; */
   border: none;
   height: 25px;
@@ -519,6 +520,11 @@ a {
 
 #searchbox2 a {
   color: black;
+}
+
+#sisiH {
+  margin-top: 175px;
+  margin-left: 1300px;
 }
 /* #testscroll {
   overflow: scroll;
