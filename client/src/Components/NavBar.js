@@ -19,10 +19,10 @@ function NavBar({ user, setUser }) {
       <br />
       <ul id="menuList">
         <li>
-          <Link to="/sites">TESTING LOCATIONS</Link>
+          <Link to="/sites">TESTING SITES</Link>
         </li>
         <li>
-          <Link to="/tests">TESTS</Link>
+          <Link to="/tests">LEARN</Link>
         </li>
 
         <li id="user_name">WELCOME, {user.full_name}</li>
