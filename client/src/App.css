@@ -1,7 +1,7 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-image: url("./images/GD1.jpg");
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   /* background-size: 100%; */
   background-size: cover;
 }
@@ -178,9 +178,9 @@ nav p {
 }
 
 .logo {
-  margin-left: 45px;
-  font-size: xx-large;
-  font-weight: bold;
+  margin-left: 50px;
+  font-size: 45px;
+  /* font-weight: bold; */
 }
 
 #menuList a {
@@ -418,8 +418,34 @@ a {
 }
 
 #faqcard {
-  height: 550px;
+  height: 575px;
 }
+
+.accountinfo {
+  background-color: #ffffff;
+  opacity: 65%;
+  border-radius: 5px;
+  border: 0;
+  height: 30.71526336669922px;
+  width: 357.402099609375px;
+
+  border-radius: 0px;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#sisiA {
+  display: flex;
+  justify-content: flex-end;
+  align-content: flex-end;
+  margin-right: 85px;
+  margin-top: 270px;
+}
+/* #testscroll {
+  overflow: scroll;
+} */
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 .homepageContainer {
   display: flex;
