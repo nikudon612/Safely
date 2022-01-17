@@ -1,4 +1,4 @@
-function ResultCards({ site, name, rating, location, hours }) {
+function ResultCards({ site, name, rating, location, contact, hours }) {
   return (
     <div id="resultscard">
       <div className="resultinfo">
@@ -6,7 +6,8 @@ function ResultCards({ site, name, rating, location, hours }) {
           <span className="sitename">{name}</span>
           <span>RATING: {rating}</span>
           <span>{location}</span>
-          <span>{hours}</span>
+          <span>{contact}</span>
+          <span>Hours: {hours}</span>
         </div>
       </div>
       <div className="testtype">PCR</div>

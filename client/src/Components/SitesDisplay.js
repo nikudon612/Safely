@@ -10,6 +10,7 @@ function SitesDisplay({ siteLists }) {
         name={e.name}
         rating={e.rating}
         location={e.location}
+        contact={e.contact}
         hours={e.hours}
         // handleEventDelete={handleEventDelete}
       />
