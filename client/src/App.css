@@ -371,10 +371,11 @@ a {
   flex-direction: column;
   align-items: center;
   margin-top: 75px;
+  overflow: scroll;
 }
 
 .testcard {
-  height: 478.99999606608617px;
+  height: 505px;
   width: 833.9999773502204px;
   left: nullpx;
   top: nullpx;
@@ -401,7 +402,7 @@ a {
 
 .testcontent {
   font-style: normal;
-  font-weight: bold;
+  /* font-weight: bold; */
   font-size: 18px;
   line-height: 21px;
 
@@ -410,6 +411,14 @@ a {
   margin-top: 25px;
   margin-left: 25px;
   margin-right: 25px;
+}
+
+.testq {
+  font-weight: bold;
+}
+
+#faqcard {
+  height: 550px;
 }
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 .homepageContainer {

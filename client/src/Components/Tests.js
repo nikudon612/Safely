@@ -5,7 +5,7 @@ function Tests() {
         <div className="testtitle">TYPES OF COVID TESTS AND WHAT THEY DO</div>
         <br />
         <div className="testcontent">
-          PCR
+          <div className="testq">PCR</div>
           <br />
           <br />
           PCR tests (or “molecular tests”) are the gold standard in COVID-19
@@ -13,7 +13,7 @@ function Tests() {
           See more...
           <br />
           <br />
-          ANTIGEN
+          <div className="testq">ANTIGEN</div>
           <br />
           <br />
           Antigen tests (or “rapid tests”) are usually available at emergency
@@ -21,7 +21,7 @@ function Tests() {
           accurate than their counterparts. See more...
           <br />
           <br />
-          ANTIBODY
+          <div className="testq">ANTIBODY</div>
           <br />
           <br />
           Antibody tests detect to the presence of antibodies that countered
@@ -30,6 +30,12 @@ function Tests() {
           more...
         </div>
       </div>
+
+      <br />
+      <br />
+      <br />
+      <br />
+
       <div className="testcard">
         <div className="testtitle">OVERVIEW ON COVID 19 TESTING </div>
         <div className="testcontent">
@@ -60,6 +66,54 @@ function Tests() {
           individuals.
         </div>
       </div>
+      <br />
+      <br />
+      <br />
+      <br />
+
+      <div className="testcard" id="faqcard">
+        <div className="testtitle">FAQ</div>
+        <div className="testcontent">
+          <div className="testq">
+            I’m traveling and I need to know where to get tested for COVID-19.
+            What do I do?
+          </div>
+          <br />
+          <br />
+          This is the reason this website was created! You can find a COVID-19
+          testing location near you: Visit our homepage and let us know where
+          you’d like to get tested. Press the search button after entering your
+          information and you will be shown testing locations in your area. Get
+          in touch with your preferred testing location, using the contact we
+          have provided.
+          <br />
+          <br />
+          <div className="testq">
+            How often should I get tested during my trip?
+          </div>
+          <br />
+          <br />
+          The CDC recommends that travelers get tested 1-3 days before
+          traveling, and 3-5 days after they’ve returned to their home. It’s
+          also wise to self-quarantine before and after your trip.
+          <br />
+          <br />
+          <div className="testq">
+            I found a testing location near me, but some of their information
+            was incorrect. What should I do?
+          </div>
+          <br />
+          <br />
+          If you find that any inaccurate information on our site, feel free to
+          contact us and we will fix it ASAP. Some testing locations such as
+          mobile testing sites often move around so it may have gone under our
+          radar.
+        </div>
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
     </div>
   );
 }
