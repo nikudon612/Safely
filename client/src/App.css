@@ -441,7 +441,10 @@ a {
   justify-content: flex-end;
   align-content: flex-end;
   margin-right: 85px;
-  margin-top: 270px;
+}
+
+#sisiLearn {
+  margin-left: 1300px;
 }
 /* #testscroll {
   overflow: scroll;
