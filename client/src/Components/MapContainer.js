@@ -17,6 +17,7 @@ export const MapContainer = ({ array }) => {
     setSelected(item);
   };
 
+  // LOCATIONS FOR GOOGLE MAPS PINS. NEED TO UPDATE THIS DATA W SEEDS
   const locations = [
     {
       // RAPID NYC 40.70059352680852, -73.91352288195964
