@@ -8,6 +8,7 @@ import SignUp from "./Components/SignUp";
 import Results from "./Components/Results";
 import Sites from "./Components/Sites";
 import Tests from "./Components/Tests";
+import Account from "./Components/Account";
 
 function App() {
   //User state for login
@@ -31,6 +32,10 @@ function App() {
     <>
       {user ? (
         <Switch>
+          <Route exact path="/account">
+            <NavBar user={user} setUser={setUser} />
+            <Account user={user} />
+          </Route>
           <Route exact path="/tests">
             <NavBar user={user} setUser={setUser} />
             <Tests />

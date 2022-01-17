@@ -1,6 +1,7 @@
 function Tests() {
   return (
     <div className="testbox">
+      {/* <div id="testscroll"> */}
       <div className="testcard">
         <div className="testtitle">TYPES OF COVID TESTS AND WHAT THEY DO</div>
         <br />
@@ -38,6 +39,7 @@ function Tests() {
 
       <div className="testcard">
         <div className="testtitle">OVERVIEW ON COVID 19 TESTING </div>
+        <br />
         <div className="testcontent">
           If you have symptons of COVID-19, It’s important to get tested and
           isolate until you know your results.
@@ -73,6 +75,7 @@ function Tests() {
 
       <div className="testcard" id="faqcard">
         <div className="testtitle">FAQ</div>
+        <br />
         <div className="testcontent">
           <div className="testq">
             I’m traveling and I need to know where to get tested for COVID-19.
@@ -114,6 +117,7 @@ function Tests() {
       <br />
       <br />
       <br />
+      {/* </div> */}
     </div>
   );
 }
