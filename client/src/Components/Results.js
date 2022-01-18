@@ -4,23 +4,18 @@ import PopUp from "./PopUp";
 import { useState } from "react";
 
 function Results() {
-  // const [buttonPopup, setButtonPopup] = useState(false);
+  const [buttonPopup, setButtonPopup] = useState(false);
 
-  // function handleReviewClick() {
-  //   setButtonPopup(true);
-  // }
+  function handleReviewClick() {
+    setButtonPopup(true);
+  }
 
   return (
     <div className="rePage">
       <div className="resultsPage">
-        {/* <PopUp trigger={buttonPopup} setTrigger={setButtonPopup}>
-          <h1>Hello world</h1>
-          <p>This is triggered from clicking rating!</p>
-        </PopUp> */}
+        <PopUp trigger={buttonPopup} setTrigger={setButtonPopup} />
         <div>
-          <MapContainer
-          // handleReviewClick={handleReviewClick}
-          />
+          <MapContainer handleReviewClick={handleReviewClick} />
         </div>
       </div>
     </div>
