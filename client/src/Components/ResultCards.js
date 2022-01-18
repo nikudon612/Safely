@@ -10,11 +10,11 @@ function ResultCards({ site, name, rating, location, contact, hours }) {
       <div className="resultinfo">
         <div className="sitecontainer">
           <span className="sitename">{name}</span>
-          <span>RATING: {rating}</span>
+          <span id ="reviewpopup" onClick={() => setButtonPopup(true)}>RATING: {rating}</span>
           <span>{location}</span>
           <span>{contact}</span>
           <span>Hours: {hours}</span>
-          <button onClick={() => setButtonPopup(true)}>Leave Review</button>
+          {/* <button onClick={() => setButtonPopup(true)}>Leave Review</button> */}
         </div>
       </div>
       <div className="testtype">PCR</div>

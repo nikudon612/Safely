@@ -526,6 +526,10 @@ a {
   margin-top: 175px;
   margin-left: 1300px;
 }
+
+#reviewpopup {
+  cursor: pointer;
+}
 /* #testscroll {
   overflow: scroll;
 } */
