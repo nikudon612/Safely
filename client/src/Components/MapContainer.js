@@ -10,7 +10,7 @@ import {
 import ResultCards from "./ResultCards";
 import Sites from "./Sites";
 
-export const MapContainer = ({ array }) => {
+export const MapContainer = ({ handleReviewClick }) => {
   const [selected, setSelected] = useState({});
 
   const onSelect = (item) => {
@@ -89,7 +89,7 @@ export const MapContainer = ({ array }) => {
           <input id="search" placeholder="Enter your City or Zip"></input>
         </div>
         <div id="resultsbox">
-          <Sites />
+          <Sites handleReviewClick={handleReviewClick} />
           {/* <ResultCards /> */}
         </div>
       </div>

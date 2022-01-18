@@ -1,7 +1,7 @@
 import ResultCards from "./ResultCards";
 // import SiteList from "./SiteList";
 
-function SitesDisplay({ siteLists }) {
+function SitesDisplay({ siteLists, handleReviewClick }) {
   const sitesmapped = siteLists.map((e) => {
     return (
       <ResultCards
@@ -12,6 +12,7 @@ function SitesDisplay({ siteLists }) {
         location={e.location}
         contact={e.contact}
         hours={e.hours}
+        // handleReviewClick={handleReviewClick}
         // handleEventDelete={handleEventDelete}
       />
     );
