@@ -1,4 +1,10 @@
+import PopUp from "./PopUp";
+import { useState } from "react";
+
 function ResultCards({ site, name, rating, location, contact, hours }) {
+  //State for Review Popup
+  const [buttonPopup, setButtonPopup] = useState(false);
+
   return (
     <div id="resultscard">
       <div className="resultinfo">
@@ -8,9 +14,15 @@ function ResultCards({ site, name, rating, location, contact, hours }) {
           <span>{location}</span>
           <span>{contact}</span>
           <span>Hours: {hours}</span>
+          <button onClick={() => setButtonPopup(true)}>Leave Review</button>
         </div>
       </div>
       <div className="testtype">PCR</div>
+
+      <PopUp trigger={buttonPopup} setTrigger={setButtonPopup}>
+        <h1>Hello world</h1>
+        <p>This is triggered from clicking rating!</p>
+      </PopUp>
     </div>
   );
 }
