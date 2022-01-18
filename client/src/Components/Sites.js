@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import SitesDisplay from "./SitesDisplay";
 
-function Sites({ handleReviewClick }) {
+function Sites({ handleReviewClick, handleSubmit }) {
   const [siteLists, setSiteLists] = useState([]);
   const sites = "/sites";
 
@@ -16,6 +16,7 @@ function Sites({ handleReviewClick }) {
         <SitesDisplay
           siteLists={siteLists}
           handleReviewClick={handleReviewClick}
+          handleSubmit={handleSubmit}
         />
       </div>
     </div>

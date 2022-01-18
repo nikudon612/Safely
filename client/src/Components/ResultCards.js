@@ -9,6 +9,7 @@ function ResultCards({
   contact,
   hours,
   handleReviewClick,
+  handleSubmit,
 }) {
   //State for Review Popup
   // const [buttonPopup, setButtonPopup] = useState(false);
@@ -32,7 +33,8 @@ function ResultCards({
       </div>
       <div className="testtype">PCR</div>
       <PopUp
-      // trigger={buttonPopup} setTrigger={setButtonPopup}
+        handleSubmit={handleSubmit}
+        // trigger={buttonPopup} setTrigger={setButtonPopup}
       />
     </div>
   );

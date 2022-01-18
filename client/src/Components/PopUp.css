@@ -42,8 +42,14 @@
   height: 40px;
   border: none;
   cursor: pointer;
+  font-weight: bold;
 }
 
 #pbutton:hover {
   background-color: #dddddd;
+}
+
+.close-button {
+  border: none;
+  cursor: pointer;
 }
