@@ -11,7 +11,7 @@ function ResultCards({
   handleReviewClick,
 }) {
   //State for Review Popup
-  const [buttonPopup, setButtonPopup] = useState(false);
+  // const [buttonPopup, setButtonPopup] = useState(false);
 
   return (
     <div id="resultscard">
@@ -20,30 +20,20 @@ function ResultCards({
           <span className="sitename">{name}</span>
           <span
             id="reviewpopup"
-            onClick={() => setButtonPopup(true)}
-            // onClick={() => handleReviewClick}
+            // onClick={() => setButtonPopup(true)}
+            onClick={handleReviewClick}
           >
             RATING: {rating}
           </span>
           <span>{location}</span>
           <span>{contact}</span>
           <span>Hours: {hours}</span>
-          {/* <button onClick={() => setButtonPopup(true)}>Leave Review</button> */}
         </div>
       </div>
       <div className="testtype">PCR</div>
-      {/* <div id="pbkg"> */}
-      <PopUp trigger={buttonPopup} setTrigger={setButtonPopup}>
-        <p>RATING (1-5)</p>
-        <input id="prating" placeholder="Enter your rating"></input>
-        <p>COMMENT</p>
-        <input id="pcomment" placeholder="Enter your review"></input>
-        <br />
-        <br />
-
-        <button id="pbutton">SUBMIT REVIEW</button>
-      </PopUp>
-      {/* </div> */}
+      <PopUp
+      // trigger={buttonPopup} setTrigger={setButtonPopup}
+      />
     </div>
   );
 }

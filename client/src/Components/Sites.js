@@ -15,7 +15,7 @@ function Sites({ handleReviewClick }) {
       <div id="ts">
         <SitesDisplay
           siteLists={siteLists}
-          // handleReviewClick={handleReviewClick}
+          handleReviewClick={handleReviewClick}
         />
       </div>
     </div>

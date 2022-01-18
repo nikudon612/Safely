@@ -12,7 +12,7 @@ function SitesDisplay({ siteLists, handleReviewClick }) {
         location={e.location}
         contact={e.contact}
         hours={e.hours}
-        // handleReviewClick={handleReviewClick}
+        handleReviewClick={handleReviewClick}
         // handleEventDelete={handleEventDelete}
       />
     );
