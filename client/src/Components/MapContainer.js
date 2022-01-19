@@ -1,6 +1,6 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   GoogleMap,
   LoadScript,
@@ -10,8 +10,24 @@ import {
 import Sites from "./Sites";
 
 export const MapContainer = ({ handleReviewClick, handleAdd }) => {
+  //State for selecting markers
   const [selected, setSelected] = useState({});
+  //State for geolocation position
+  const [currentPosition, setCurrentPosition] = useState({});
 
+  const success = (position) => {
+    const currentPosition = {
+      lat: position.coords.latitude,
+      lng: position.coords.longitude,
+    };
+    setCurrentPosition(currentPosition);
+  };
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(success);
+  });
+
+  //Setting state for info windows on markers
   const onSelect = (item) => {
     setSelected(item);
   };
@@ -27,6 +43,7 @@ export const MapContainer = ({ handleReviewClick, handleAdd }) => {
       },
       address: "380 Grove Street, Ridgewood, NY",
       hours: "M-F 8am - 6pm",
+      comment: "this place is great!",
     },
     {
       // ORO LATINO 40.71730731019591, -73.99582819413783
@@ -88,10 +105,7 @@ export const MapContainer = ({ handleReviewClick, handleAdd }) => {
           <input id="search" placeholder="Enter your City or Zip"></input>
         </div>
         <div id="resultsbox">
-          <Sites
-            handleReviewClick={handleReviewClick}
-            handleAdd={handleAdd}
-          />
+          <Sites handleReviewClick={handleReviewClick} handleAdd={handleAdd} />
           {/* <ResultCards /> */}
         </div>
       </div>
@@ -106,16 +120,7 @@ export const MapContainer = ({ handleReviewClick, handleAdd }) => {
               <Marker
                 key={item.name}
                 position={item.location}
-                // hours={item.hours}
-              />
-            );
-          })}
-          {locations.map((item) => {
-            return (
-              <Marker
-                key={item.name}
-                position={item.location}
-                // hours={item.hours}
+                hours={item.hours}
                 onClick={() => onSelect(item)}
               />
             );
