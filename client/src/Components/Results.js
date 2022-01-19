@@ -3,59 +3,45 @@ import ResultCards from "./ResultCards";
 import PopUp from "./PopUp";
 import { useState, useEffect } from "react";
 
-function Results() {
+function Results({ user }) {
+  //State for Popup to show
   const [buttonPopup, setButtonPopup] = useState(false);
-  //States for handle submit review form
-  const [rating, setRating] = useState("");
-  const [comment, setComment] = useState("");
-  const [user_id, setUser_id] = useState("");
-  const [testing_site_id, setTesting_site_id] = useState("");
+  //State for all our reviews to show
   const [reviewLists, setReviewLists] = useState([]);
   const reviews = "/reviews";
 
+  //Fetch for reviews
   useEffect(() => {
     fetch(reviews)
       .then((res) => res.json())
       .then((data) => setReviewLists(data));
   }, []);
-
+  //Function to display Popup
   function handleReviewClick() {
     setButtonPopup(true);
   }
-
+  //Function to add a new review
   function handleAdd(newReview) {
     console.log("Submit button has been clicked!");
     const addReview = [...reviewLists, newReview];
     setReviewLists(addReview);
   }
 
-  function handleSubmit(e) {
-    e.preventDefault();
-
-    fetch("/reviews", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        rating: rating,
-        comment: comment,
-        user_id: user_id,
-        testing_site_id: testing_site_id,
-      }),
-    })
-      .then((r) => r.json())
-      .then((data) => handleAdd(data));
-  }
-
   return (
     <div className="rePage">
       <div className="resultsPage">
-        <PopUp trigger={buttonPopup} setTrigger={setButtonPopup} />
+        <PopUp
+          trigger={buttonPopup}
+          setTrigger={setButtonPopup}
+          user={user}
+          handleAdd={handleAdd}
+
+          // setRating={setRating}
+        />
         <div>
           <MapContainer
             handleReviewClick={handleReviewClick}
-            handleSubmit={handleSubmit}
+            handleAdd={handleAdd}
           />
         </div>
       </div>
