@@ -22,11 +22,11 @@ function Account({ user }) {
             <div className="ucontent">{user.username}</div>
           </div>
 
-          {/* <p>PASSWORD</p>
+          <p>PASSWORD</p>
 
           <div className="accountinfo">
-            <div className="ucontent">{user.password}</div>
-          </div> */}
+            <div className="ucontent">***** {user.password}</div>
+          </div>
         </div>
         <div id="sisiA">
           <a href="https://sisiyuart.com/">

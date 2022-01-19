@@ -26,7 +26,7 @@ function SignUp({ setUser }) {
       }),
     }).then((r) => {
       if (r.ok) {
-        r.json().then((user) => setUser(user));
+        r.json().then((user) => (user));
       }
     });
   }
@@ -88,7 +88,7 @@ function SignUp({ setUser }) {
           <div id="PasswordReq">
             <p>Password requirements</p>
             <ul>
-              <li>Must be a minimum of 8 characters.</li>
+              <li>Must be a minimum of 5 characters.</li>
               <li>Must contain letters, numbers, and symbols.</li>
               <li>Passwords must match.</li>
             </ul>
