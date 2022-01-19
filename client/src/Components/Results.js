@@ -16,6 +16,10 @@ function Results({ user }) {
       .then((res) => res.json())
       .then((data) => setReviewLists(data));
   }, []);
+
+  const styles = {
+    transition: "0.3s",
+  };
   //Function to display Popup
   function handleReviewClick() {
     setButtonPopup(true);
@@ -35,6 +39,7 @@ function Results({ user }) {
           setTrigger={setButtonPopup}
           user={user}
           handleAdd={handleAdd}
+          // style={styles}
 
           // setRating={setRating}
         />

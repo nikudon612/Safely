@@ -28,8 +28,10 @@ function PopUp(props) {
       .then((data) => props.handleAdd(data));
   }
 
+  
+
   return props.trigger ? (
-    <div className="popup">
+    <div className="popup" >
       <div className="popup-inner">
         <form className="pform" onSubmit={handleSubmit}>
           <p>RATING</p>
