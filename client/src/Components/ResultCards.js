@@ -25,7 +25,7 @@ function ResultCards({
             RATING: {rating}
           </span>
           <span>{location}</span>
-          <span>{contact}</span>
+          <span>Contact: {contact}</span>
           <span>Hours: {hours}</span>
         </div>
       </div>

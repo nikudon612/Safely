@@ -40,6 +40,12 @@ export const MapContainer = ({ handleReviewClick, handleAdd }) => {
     setSelected(item);
   };
 
+  //Handle for search
+  function handleSubmit(city) {
+    const newArea = ["city converted to lng lat"];
+    setCurrentPosition(newArea);
+  }
+
   // LOCATIONS FOR GOOGLE MAPS PINS. NEED TO UPDATE THIS DATA W SEEDS
   const locations = [
     {
@@ -109,8 +115,10 @@ export const MapContainer = ({ handleReviewClick, handleAdd }) => {
     <div id="map">
       <div id="resultsContainer">
         <div id="searchbox">
-          <div id="urLocation">Your Location</div>
-          <input id="search" placeholder="Enter your City or Zip"></input>
+          <form onSubmit={handleSubmit}>
+            <div id="urLocation">Your Location</div>
+            <input id="search" placeholder="Enter your City or Zip"></input>
+          </form>
         </div>
         <div id="resultsbox">
           <Sites handleReviewClick={handleReviewClick} handleAdd={handleAdd} />
