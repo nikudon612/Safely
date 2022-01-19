@@ -65,7 +65,7 @@ function App() {
         <Switch>
           <Route path="/signup" user={user} setUser={setUser}>
             <NavLS />
-            <SignUp />
+            <SignUp setUser={setUser} />
           </Route>
           <Route path="/">
             <NavLS />
