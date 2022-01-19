@@ -12,11 +12,11 @@ function Review() {
 
   const reviewRow = reviews.map((e) => {
     return (
-      <div>
-        <span className="reviewinfo">{e.testing_site_id}</span>
-        <span className="reviewinfo">{e.id}</span>
-        <span className="reviewinfo">{e.rating}</span>
-        <span className="reviewinfo">{e.comment}</span>
+      <div className="reviewcontainer">
+        <span className="reviewinfo">Review ID: {e.id}</span>
+        <span className="reviewinfo">Site ID: {e.testing_site_id}</span>
+        <span className="reviewinfo">Rating: {e.rating}</span>
+        <span className="reviewinfo">Comment: {e.comment}</span>
       </div>
     );
   });
