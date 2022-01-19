@@ -29,6 +29,7 @@ function Results({ user }) {
     console.log("Submit button has been clicked!");
     const addReview = [...reviewLists, newReview];
     setReviewLists(addReview);
+    setButtonPopup(false);
   }
 
   return (
