@@ -7,10 +7,9 @@ import {
   Marker,
   InfoWindow,
 } from "@react-google-maps/api";
-import ResultCards from "./ResultCards";
 import Sites from "./Sites";
 
-export const MapContainer = ({ handleReviewClick, handleSubmit }) => {
+export const MapContainer = ({ handleReviewClick, handleAdd }) => {
   const [selected, setSelected] = useState({});
 
   const onSelect = (item) => {
@@ -91,7 +90,7 @@ export const MapContainer = ({ handleReviewClick, handleSubmit }) => {
         <div id="resultsbox">
           <Sites
             handleReviewClick={handleReviewClick}
-            handleSubmit={handleSubmit}
+            handleAdd={handleAdd}
           />
           {/* <ResultCards /> */}
         </div>

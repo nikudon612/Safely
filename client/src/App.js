@@ -47,12 +47,12 @@ function App() {
           </Route>
           <Route exact path="/sites">
             <NavBar user={user} setUser={setUser} />
-            <Sites />
+            <Sites user={user} />
           </Route>
           <Route path="/">
             <NavBar user={user} setUser={setUser} />
             <div id="homepageContainer">
-              <Results />
+              <Results user={user} />
             </div>
           </Route>
         </Switch>

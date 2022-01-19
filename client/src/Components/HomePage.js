@@ -15,7 +15,7 @@ function HomePage() {
             <input id="searchy" placeholder="Enter your City or Zip"></input>
           </div>
           <Link to="/">
-            <img src="/images/magnifyingglass.png"></img>
+            <img src="/images/magnifyingglass.png" alt="magnifying glass"></img>
           </Link>
         </div>
       </div>

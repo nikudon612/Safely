@@ -1,5 +1,5 @@
 import PopUp from "./PopUp";
-import { useState } from "react";
+// import { useState } from "react";
 
 function ResultCards({
   site,
@@ -9,11 +9,9 @@ function ResultCards({
   contact,
   hours,
   handleReviewClick,
-  handleSubmit,
+  handleAdd,
+  user, 
 }) {
-  //State for Review Popup
-  // const [buttonPopup, setButtonPopup] = useState(false);
-
   return (
     <div id="resultscard">
       <div className="resultinfo">
@@ -32,10 +30,11 @@ function ResultCards({
         </div>
       </div>
       <div className="testtype">PCR</div>
-      <PopUp
-        handleSubmit={handleSubmit}
+      {/* <PopUp
+        handleAdd={handleAdd}
+        user={user}
         // trigger={buttonPopup} setTrigger={setButtonPopup}
-      />
+      /> */}
     </div>
   );
 }
