@@ -26,7 +26,7 @@ function SignUp({ setUser }) {
       }),
     }).then((r) => {
       if (r.ok) {
-        r.json().then((user) => (user));
+        r.json().then((user) => setUser(user));
       }
     });
   }
