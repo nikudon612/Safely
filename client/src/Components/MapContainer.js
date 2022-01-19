@@ -113,8 +113,10 @@ export const MapContainer = ({ handleReviewClick, handleAdd }) => {
         <GoogleMap
           mapContainerStyle={mapStyles}
           zoom={13}
-          center={defaultCenter}
+          center={currentPosition}
         >
+          {currentPosition.lat && <Marker position={currentPosition} />}
+
           {locations.map((item) => {
             return (
               <Marker
