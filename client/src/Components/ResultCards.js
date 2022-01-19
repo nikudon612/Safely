@@ -10,7 +10,7 @@ function ResultCards({
   hours,
   handleReviewClick,
   handleAdd,
-  user, 
+  user,
 }) {
   return (
     <div id="resultscard">
@@ -29,6 +29,7 @@ function ResultCards({
           <span>Hours: {hours}</span>
         </div>
       </div>
+      <hr></hr>
       <div className="testtype">PCR</div>
       {/* <PopUp
         handleAdd={handleAdd}
