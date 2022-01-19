@@ -15,6 +15,7 @@ export const MapContainer = ({ handleReviewClick, handleAdd }) => {
   //State for geolocation position
   const [currentPosition, setCurrentPosition] = useState({});
 
+  //Variable for geolocating position
   const success = (position) => {
     const currentPosition = {
       lat: position.coords.latitude,
@@ -26,6 +27,13 @@ export const MapContainer = ({ handleReviewClick, handleAdd }) => {
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(success);
   });
+
+  //Variable for draggable markers
+  const onMarkerDragEnd = (e) => {
+    const lat = e.latLng.lat();
+    const lng = e.latLng.lng();
+    setCurrentPosition({ lat, lng });
+  };
 
   //Setting state for info windows on markers
   const onSelect = (item) => {
@@ -115,7 +123,14 @@ export const MapContainer = ({ handleReviewClick, handleAdd }) => {
           zoom={13}
           center={currentPosition}
         >
-          {currentPosition.lat && <Marker position={currentPosition} />}
+          {currentPosition.lat ? (
+            <Marker
+              position={currentPosition}
+              onDragEnd={(e) => onMarkerDragEnd(e)}
+              draggable={true}
+            />
+          ) : null}
+          {/* {currentPosition.lat && <Marker position={currentPosition} />} */}
 
           {locations.map((item) => {
             return (
