@@ -43,10 +43,11 @@
   border: none;
   cursor: pointer;
   font-weight: bold;
+  transition: 0.3s;
 }
 
 #pbutton:hover {
-  background-color: #dddddd;
+  background-color: #ebebeb;
 }
 
 .close-button {
