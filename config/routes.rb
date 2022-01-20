@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   #testing site routes
   get '/sites', to: 'testing_sites#index'
-  get '/sites', to: 'testing_sites#show'
+  get '/sites/:id', to: 'testing_sites#show'
 
   # delete '/reviews', to: 'reviews#destroy'
 
