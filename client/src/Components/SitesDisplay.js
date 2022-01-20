@@ -12,6 +12,7 @@ function SitesDisplay({ siteLists, handleReviewClick, handleAdd }) {
         location={e.location}
         contact={e.contact}
         hours={e.hours}
+        testtype={e.test_type}
         handleReviewClick={handleReviewClick}
         handleAdd={handleAdd}
         // handleEventDelete={handleEventDelete}

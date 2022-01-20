@@ -8,6 +8,7 @@ function ResultCards({
   location,
   contact,
   hours,
+  testtype,
   handleReviewClick,
   handleAdd,
   user,
@@ -30,12 +31,7 @@ function ResultCards({
         </div>
       </div>
       <hr></hr>
-      <div className="testtype">PCR</div>
-      {/* <PopUp
-        handleAdd={handleAdd}
-        user={user}
-        // trigger={buttonPopup} setTrigger={setButtonPopup}
-      /> */}
+      <div className="testtype">{testtype}</div>
     </div>
   );
 }
