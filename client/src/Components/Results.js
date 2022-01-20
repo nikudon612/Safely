@@ -1,9 +1,11 @@
 import MapContainer from "./MapContainer";
-import ResultCards from "./ResultCards";
 import PopUp from "./PopUp";
 import { useState, useEffect } from "react";
+import Review from "./Review";
 
 function Results({ user }) {
+  //State for Reviews to show on result cards
+  const [reviewPopup, setReviewPopup] = useState(false);
   //State for Popup to show
   const [buttonPopup, setButtonPopup] = useState(false);
   //State for all our reviews to show
@@ -22,7 +24,9 @@ function Results({ user }) {
   };
 
   //Function to display Cards reviews
-  function handleReviews() {}
+  function handleReviews() {
+    setReviewPopup(true);
+  }
 
   //Function to display Popup
   function handleReviewClick() {
@@ -48,12 +52,19 @@ function Results({ user }) {
 
           // setRating={setRating}
         />
-        <div>
-          <MapContainer
-            handleReviewClick={handleReviewClick}
-            handleReviews={handleReviews}
-            handleAdd={handleAdd}
+        <div className="resultsPage">
+          <Review
+            trigger={reviewPopup}
+            setTrigger={setReviewPopup}
+            user={user}
           />
+          <div>
+            <MapContainer
+              handleReviewClick={handleReviewClick}
+              handleReviews={handleReviews}
+              handleAdd={handleAdd}
+            />
+          </div>
         </div>
       </div>
     </div>
