@@ -22,6 +22,9 @@ function NavBar({ user, setUser }) {
           <Link to="/sites">TESTING SITES</Link>
         </li>
         <li>
+          <Link to="/reviews">REVIEWS</Link>
+        </li>
+        <li>
           <Link to="/tests">LEARN</Link>
         </li>
 
