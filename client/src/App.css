@@ -81,7 +81,7 @@ button:hover {
 .signUP {
   color: black;
   background: #ffffff;
-  opacity: 65%;
+  opacity: 0.65;
   border-radius: 5px;
   border: 0;
   height: 30.71526336669922px;
@@ -101,7 +101,7 @@ button:hover {
 
 .signupFORM input {
   background: #ffffff;
-  opacity: 65%;
+  opacity: 0.65;
   border-radius: 5px;
   border: 0;
   height: 30.71526336669922px;
@@ -132,10 +132,9 @@ button:hover {
 #PasswordReq {
   display: flex;
   flex-direction: column;
-  opacity: 50%;
+  opacity: 0.5;
   font-size: small;
   align-items: center;
-  opacity: 50%;
   font-size: small;
 }
 
@@ -147,7 +146,7 @@ button:hover {
 
 #loginForm input {
   background-color: #ffffff;
-  opacity: 65%;
+  opacity: 0.65;
   border-radius: 5px;
   border: 0;
   height: 30.71526336669922px;
@@ -217,7 +216,7 @@ nav p {
 .signInL {
   color: black;
   background: #ffffff;
-  opacity: 65%;
+  opacity: 0.65;
   border-radius: 5px;
   border: 0;
   height: 30.71526336669922px;
@@ -228,7 +227,7 @@ nav p {
 
 .forgot {
   color: black;
-  opacity: 50%;
+  opacity: 0.5;
 }
 
 #sisiL {
@@ -270,7 +269,7 @@ nav p {
   border: black;
   /* width: 62%; */
   background: #f1f1f1;
-  opacity: 55%;
+  opacity: 0.55;
   height: 86.66667938232422px;
   border-radius: 0px;
   display: flex;
@@ -281,13 +280,10 @@ nav p {
 #search {
   width: 90%;
   background: #f1f1f1;
-  opacity: 95%;
+  opacity: 0.95;
   border: none;
   height: 25px;
-  /*   
-  background: #f1f1f1;
-  opacity: 95%;
-  border: none; */
+
   margin-left: 200px;
 }
 
@@ -301,7 +297,6 @@ nav p {
   left: 0px;
   top: 201.6666259765625px;
   background: #f1f1f196;
-  /* opacity: 55%; */
   border: 1px solid black;
   display: flex;
   justify-content: flex-start;
@@ -340,7 +335,7 @@ a {
   align-items: center;
   border: 2px solid rgb(122 34 238 / 32%);
   /* box-shadow: 0px 4px 4px rgb(54, 54, 54); */
-  opacity: 85%;
+  opacity: 0.85;
   z-index: 2;
 }
 
@@ -349,7 +344,7 @@ a {
   height: 315px;
   /* width: 479px; */
   box-shadow: 0px 4px 10px rgba(54, 54, 54, 0.411);
-  opacity: 100%;
+  opacity: 0.1;
 }
 
 .resultinfo {
@@ -453,7 +448,7 @@ hr {
 
 .accountinfo {
   background-color: #ffffff;
-  opacity: 65%;
+  opacity: 0.65;
   border-radius: 5px;
   border: 0;
   height: 30.71526336669922px;
@@ -517,7 +512,7 @@ hr {
   border: black;
   width: 55%;
   /* background: #f1f1f1; */
-  opacity: 55%;
+  opacity: 0.55;
   height: 86.66667938232422px;
   border: 1px solid rgb(44, 44, 44);
   border-radius: 5px;
@@ -533,12 +528,10 @@ hr {
 #searchy {
   width: 200px;
   background: transparent;
-  /* opacity: 95%; */
   border: none;
   height: 25px;
   /*   
   background: #f1f1f1;
-  opacity: 95%;
   border: none; */
 }
 
