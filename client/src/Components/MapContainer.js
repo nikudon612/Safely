@@ -9,7 +9,11 @@ import {
 } from "@react-google-maps/api";
 import Sites from "./Sites";
 
-export const MapContainer = ({ handleReviewClick, handleAdd }) => {
+export const MapContainer = ({
+  handleReviewClick,
+  handleAdd,
+  handleReviews,
+}) => {
   //State for selecting markers
   const [selected, setSelected] = useState({});
   //State for geolocation position
@@ -113,7 +117,11 @@ export const MapContainer = ({ handleReviewClick, handleAdd }) => {
           <input id="search" placeholder="Enter your City or Zip"></input>
         </div>
         <div id="resultsbox">
-          <Sites handleReviewClick={handleReviewClick} handleAdd={handleAdd} />
+          <Sites
+            handleReviewClick={handleReviewClick}
+            handleAdd={handleAdd}
+            handleReviews={handleReviews}
+          />
           {/* <ResultCards /> */}
         </div>
       </div>

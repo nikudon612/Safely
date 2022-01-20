@@ -20,6 +20,10 @@ function Results({ user }) {
   const styles = {
     transition: "0.3s",
   };
+
+  //Function to display Cards reviews
+  function handleReviews() {}
+
   //Function to display Popup
   function handleReviewClick() {
     setButtonPopup(true);
@@ -47,6 +51,7 @@ function Results({ user }) {
         <div>
           <MapContainer
             handleReviewClick={handleReviewClick}
+            handleReviews={handleReviews}
             handleAdd={handleAdd}
           />
         </div>
