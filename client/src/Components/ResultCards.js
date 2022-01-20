@@ -15,7 +15,7 @@ function ResultCards({
   user,
 }) {
   return (
-    <div id="resultscard">
+    <div className="resultscard">
       <div className="resultinfo">
         <div className="sitecontainer">
           <span className="sitename">{name}</span>

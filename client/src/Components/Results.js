@@ -19,10 +19,6 @@ function Results({ user }) {
       .then((data) => setReviewLists(data));
   }, []);
 
-  const styles = {
-    transition: "0.3s",
-  };
-
   //Function to display Cards reviews
   function handleReviews() {
     setReviewPopup(true);
@@ -43,28 +39,22 @@ function Results({ user }) {
   return (
     <div className="rePage">
       <div className="resultsPage">
+        <Review trigger={reviewPopup} setTrigger={setReviewPopup} user={user} />
+
         <PopUp
           trigger={buttonPopup}
           setTrigger={setButtonPopup}
           user={user}
           handleAdd={handleAdd}
-          // style={styles}
-
-          // setRating={setRating}
         />
-        <div className="resultsPage">
-          <Review
-            trigger={reviewPopup}
-            setTrigger={setReviewPopup}
-            user={user}
+        {/* <div id="rpop" /> */}
+        <div>
+          <MapContainer
+            handleReviewClick={handleReviewClick}
+            handleReviews={handleReviews}
+            handleAdd={handleAdd}
           />
-          <div>
-            <MapContainer
-              handleReviewClick={handleReviewClick}
-              handleReviews={handleReviews}
-              handleAdd={handleAdd}
-            />
-          </div>
+          {/* </div> */}
         </div>
       </div>
     </div>

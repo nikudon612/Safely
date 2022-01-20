@@ -338,7 +338,7 @@ a {
   justify-content: space-around;
 }
 
-#resultscard {
+.resultscard {
   height: 311.25140380859375px;
   width: 477.5px;
   border-radius: 15px;
@@ -353,7 +353,7 @@ a {
   z-index: 2;
 }
 
-#resultscard:hover {
+.resultscard:hover {
   transition: 0.5s;
   height: 315px;
   /* width: 479px; */
@@ -579,7 +579,7 @@ hr {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin-top: 100px;
+  /* margin-top: 100px; */
 }
 
 .reviewcontainer {
@@ -592,6 +592,10 @@ hr {
 
   border: 1px solid black;
   width: 575px;
+}
+
+#reviewreviews:hover {
+  cursor: pointer;
 }
 /* #testscroll {
   overflow: scroll;
