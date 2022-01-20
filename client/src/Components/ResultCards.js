@@ -10,6 +10,7 @@ function ResultCards({
   hours,
   testtype,
   handleReviewClick,
+  handleReviews,
   handleAdd,
   user,
 }) {
@@ -28,6 +29,9 @@ function ResultCards({
           <span>{location}</span>
           <span>Contact: {contact}</span>
           <span>Hours: {hours}</span>
+          <span id="reviewreviews" onClick={handleReviews}>
+            REVIEWS
+          </span>
         </div>
       </div>
       <hr></hr>

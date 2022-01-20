@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import SitesDisplay from "./SitesDisplay";
 
-function Sites({ handleReviewClick, handleAdd }) {
+function Sites({ handleReviewClick, handleAdd, handleReviews }) {
   const [siteLists, setSiteLists] = useState([]);
   const sites = "/sites";
 
@@ -17,7 +17,7 @@ function Sites({ handleReviewClick, handleAdd }) {
           siteLists={siteLists}
           handleReviewClick={handleReviewClick}
           handleAdd={handleAdd}
-          // user={user}
+          handleReviews={handleReviews}
         />
       </div>
     </div>
