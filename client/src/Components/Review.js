@@ -1,6 +1,7 @@
+import "./Review.css";
 import { useEffect, useState } from "react";
 
-function Review() {
+function Review(props) {
   //State for reviews
   const [reviews, setReviews] = useState([]);
   //Pull all Reviews from db
@@ -23,7 +24,7 @@ function Review() {
 
   console.log(reviewRow);
 
-  return <div id="reviewbox">{reviewRow}</div>;
+  return props.trigger ? <div id="reviewbox">{reviewRow}</div> : "";
 }
 
 export default Review;
