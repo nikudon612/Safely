@@ -5,8 +5,8 @@ function PopUp(props) {
   //States for handle submit review form
   const [rating, setRating] = useState("");
   const [comment, setComment] = useState("");
-  const [user_id, setUser_id] = useState("");
-  const [testing_site_id, setTesting_site_id] = useState("");
+  // const [user_id, setUser_id] = useState("");
+  // const [testing_site_id, setTesting_site_id] = useState("");
 
   //handle submit for review popup
   function handleSubmit(e) {
@@ -28,10 +28,8 @@ function PopUp(props) {
       .then((data) => props.handleAdd(data));
   }
 
-  
-
   return props.trigger ? (
-    <div className="popup" >
+    <div className="popup">
       <div className="popup-inner">
         <form className="pform" onSubmit={handleSubmit}>
           <p>RATING</p>

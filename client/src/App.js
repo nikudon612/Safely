@@ -34,14 +34,14 @@ function App() {
     <>
       {user ? (
         <Switch>
-          <Route exact path="/reviews/:id">
+          {/* <Route exact path="/reviews/:id">
             <NavBar user={user} setUser={setUser} />
             <Reviews user={user} />
           </Route>
           <Route exact path="/reviews">
             <NavBar user={user} setUser={setUser} />
             <Reviews user={user} />
-          </Route>
+          </Route> */}
           <Route exact path="/homepage">
             <NavBar user={user} setUser={setUser} />
             <HomePage user={user} />
