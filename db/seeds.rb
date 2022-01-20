@@ -23,7 +23,7 @@ rapidnyc =
     location: '380 Grove St, Ridgewood, NY',
     contact: '888-727-4308',
     hours: 'M-F 9am - 5pm',
-    test_type: 'PCR & Antigen', # test_type: 'Antigen',
+    test_type: 'PCR & Antigen',
   )
 northwell =
   TestingSite.create(
@@ -32,7 +32,7 @@ northwell =
     location: '55-05 Myrtle Ave, Ridgewood, NY',
     contact: '718-502-9063',
     hours: 'M-Sunday 8am - 8pm',
-    test_type: 'PCR & Antigen', # test_type: 'Antigen',
+    test_type: 'PCR & Antigen',
   )
 dragonfly =
   TestingSite.create(
@@ -41,7 +41,7 @@ dragonfly =
     location: '315 Wyckoff Ave, Brooklyn, NY',
     contact: 'N/A',
     hours: 'M-F 8am - 6pm',
-    test_type: 'PCR & Antigen', # test_type: 'Antigen',
+    test_type: 'PCR & Antigen',
   )
 
 puts 'New Reviews.......🗣️🗣️🗣️'
