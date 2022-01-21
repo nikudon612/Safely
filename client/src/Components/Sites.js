@@ -7,8 +7,10 @@ function Sites({
   handleReviews,
   reviewLists,
   handleClick,
+  siteLists,
+  setSiteLists,
 }) {
-  const [siteLists, setSiteLists] = useState([]);
+  // const [siteLists, setSiteLists] = useState([]);
   const sites = "/sites";
 
   useEffect(() => {

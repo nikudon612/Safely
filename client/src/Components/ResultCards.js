@@ -27,7 +27,9 @@ function ResultCards({
     <div className="resultscard">
       <div className="resultinfo">
         <div className="sitecontainer">
-          <option className="sitename">{name}</option>
+          <option className="sitename" onClick={handleClick}>
+            {name}
+          </option>
           <span
             id="reviewpopup"
             // onClick={() => setButtonPopup(true)}
@@ -38,9 +40,7 @@ function ResultCards({
           <span>{location}</span>
           <span>Contact: {contact}</span>
           <span>Hours: {hours}</span>
-          <span id="reviewreviews" onClick={handleClick}>
-            REVIEWS
-          </span>
+          <span id="reviewreviews">REVIEWS</span>
         </div>
       </div>
       <hr></hr>

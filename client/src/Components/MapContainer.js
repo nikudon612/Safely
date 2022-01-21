@@ -14,6 +14,9 @@ export const MapContainer = ({
   handleAdd,
   handleReviews,
   reviewLists,
+  siteLists,
+  setSiteLists,
+  handleClick,
 }) => {
   //State for selecting markers
   const [selected, setSelected] = useState({});
@@ -126,6 +129,9 @@ export const MapContainer = ({
             handleAdd={handleAdd}
             handleReviews={handleReviews}
             reviewLists={reviewLists}
+            siteLists={siteLists}
+            setSiteLists={setSiteLists}
+            handleClick={handleClick}
           />
           {/* <ResultCards /> */}
         </div>

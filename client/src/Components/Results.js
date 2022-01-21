@@ -10,6 +10,9 @@ function Results({ user }) {
   const [buttonPopup, setButtonPopup] = useState(false);
   //State for all our reviews to show
   const [reviewLists, setReviewLists] = useState([]);
+  // state for siteList for mapping
+  const [siteLists, setSiteLists] = useState([]);
+
   //State for reviews
   // const [reviews, setReviews] = useState([]);
 
@@ -26,7 +29,7 @@ function Results({ user }) {
   function handleClick(e) {
     console.log(e.target.value);
     const sitename = e.target.value;
-    const sl = siteLists.find((sn) => sn.id === sitename);
+    const sl = siteLists.find((sn) => sn.name === sitename);
     setReviewLists(sl.reviews);
   }
 
@@ -71,6 +74,8 @@ function Results({ user }) {
             handleAdd={handleAdd}
             reviewLists={reviewLists}
             handleClick={handleClick}
+            siteLists={siteLists}
+            setSiteLists={setSiteLists}
           />
           {/* </div> */}
         </div>
