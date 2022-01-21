@@ -1,7 +1,7 @@
 import "./Review.css";
 import { useEffect, useState } from "react";
 
-function Review(props, { reviewLists }) {
+function Review(props) {
   //State for reviews
   //Pull all Reviews from db
   // useEffect(() => {
@@ -10,7 +10,7 @@ function Review(props, { reviewLists }) {
   //     .then((data) => setReviews(data));
   // }, []);
 
-  const reviewRow = reviewLists?.map((e) => {
+  const reviewRows = props.reviewLists?.map((e) => {
     return (
       <div className="reviewcontainer">
         <span className="reviewinfo">Review ID: {e.id}</span>
@@ -28,9 +28,9 @@ function Review(props, { reviewLists }) {
     );
   });
 
-  console.log(reviewRow);
+  // console.log(reviewRows);
 
-  return props.trigger ? <div id="reviewbox">{reviewRow}</div> : "";
+  return props.trigger ? <div id="reviewbox">{reviewRows}</div> : "";
   // <div id="reviewbox">{reviewRow}</div>;
 }
 

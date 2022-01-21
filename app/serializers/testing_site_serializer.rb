@@ -2,6 +2,8 @@ class TestingSiteSerializer < ActiveModel::Serializer
   attributes :id,
              :name,
              :rating,
+             :lat,
+             :lng,
              :location,
              :contact,
              :hours,

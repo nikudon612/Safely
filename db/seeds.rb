@@ -20,6 +20,8 @@ rapidnyc =
   TestingSite.create(
     name: 'Rapid NYC',
     rating: 2,
+    lat: 40.70059352680852,
+    lng: -73.91352288195964,
     location: '380 Grove St, Ridgewood, NY',
     contact: '888-727-4308',
     hours: 'M-F 9am - 5pm',

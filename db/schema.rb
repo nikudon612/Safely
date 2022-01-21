@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(version: 2022_01_12_164350) do
   create_table "testing_sites", force: :cascade do |t|
     t.string "name"
     t.integer "rating"
+    t.integer "lat"
+    t.integer "lng"
     t.string "location"
     t.string "contact"
     t.string "hours"

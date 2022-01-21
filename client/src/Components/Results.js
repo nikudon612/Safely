@@ -30,7 +30,10 @@ function Results({ user }) {
     console.log(e.target.value);
     const sitename = e.target.value;
     const sl = siteLists.find((sn) => sn.name === sitename);
-    setReviewLists(sl.reviews);
+    const sr = sl.reviews;
+    console.log(sl.reviews);
+    setReviewLists(sr);
+    setReviewPopup(true);
   }
 
   //Function to display Cards reviews

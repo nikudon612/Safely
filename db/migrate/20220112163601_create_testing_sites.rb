@@ -3,6 +3,8 @@ class CreateTestingSites < ActiveRecord::Migration[6.1]
     create_table :testing_sites do |t|
       t.string :name
       t.integer :rating
+      t.integer :lat
+      t.integer :lng
       t.string :location
       t.string :contact
       t.string :hours
