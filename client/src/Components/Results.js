@@ -13,9 +13,6 @@ function Results({ user }) {
   // state for siteList for mapping
   const [siteLists, setSiteLists] = useState([]);
 
-  //State for reviews
-  // const [reviews, setReviews] = useState([]);
-
   const reviews_url = "/reviews";
 
   //Fetch for reviews

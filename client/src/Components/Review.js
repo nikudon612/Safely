@@ -28,10 +28,8 @@ function Review(props) {
     );
   });
 
-  // console.log(reviewRows);
 
   return props.trigger ? <div id="reviewbox">{reviewRows}</div> : "";
-  // <div id="reviewbox">{reviewRow}</div>;
 }
 
 export default Review;
