@@ -17,6 +17,7 @@
   width: 25%;
   max-width: 640px;
   background-color: #f1f1f1;
+  border: none;
 }
 
 .reviewcontainer .rclose-button {

@@ -10,14 +10,25 @@ function Results({ user }) {
   const [buttonPopup, setButtonPopup] = useState(false);
   //State for all our reviews to show
   const [reviewLists, setReviewLists] = useState([]);
-  const reviews = "/reviews";
+  //State for reviews
+  // const [reviews, setReviews] = useState([]);
+
+  const reviews_url = "/reviews";
 
   //Fetch for reviews
   useEffect(() => {
-    fetch(reviews)
+    fetch(reviews_url)
       .then((res) => res.json())
       .then((data) => setReviewLists(data));
   }, []);
+
+  //Function to try and get individual sites reviews to display
+  function handleClick(e) {
+    console.log(e.target.value);
+    const sitename = e.target.value;
+    const sl = siteLists.find((sn) => sn.id === sitename);
+    setReviewLists(sl.reviews);
+  }
 
   //Function to display Cards reviews
   function handleReviews() {
@@ -39,7 +50,12 @@ function Results({ user }) {
   return (
     <div className="rePage">
       <div className="resultsPage">
-        <Review trigger={reviewPopup} setTrigger={setReviewPopup} user={user} />
+        <Review
+          trigger={reviewPopup}
+          setTrigger={setReviewPopup}
+          user={user}
+          reviewLists={reviewLists}
+        />
 
         <PopUp
           trigger={buttonPopup}
@@ -53,6 +69,8 @@ function Results({ user }) {
             handleReviewClick={handleReviewClick}
             handleReviews={handleReviews}
             handleAdd={handleAdd}
+            reviewLists={reviewLists}
+            handleClick={handleClick}
           />
           {/* </div> */}
         </div>

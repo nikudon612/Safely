@@ -13,6 +13,7 @@ export const MapContainer = ({
   handleReviewClick,
   handleAdd,
   handleReviews,
+  reviewLists,
 }) => {
   //State for selecting markers
   const [selected, setSelected] = useState({});
@@ -124,6 +125,7 @@ export const MapContainer = ({
             handleReviewClick={handleReviewClick}
             handleAdd={handleAdd}
             handleReviews={handleReviews}
+            reviewLists={reviewLists}
           />
           {/* <ResultCards /> */}
         </div>

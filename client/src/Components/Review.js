@@ -1,17 +1,16 @@
 import "./Review.css";
 import { useEffect, useState } from "react";
 
-function Review(props) {
+function Review(props, { reviewLists }) {
   //State for reviews
-  const [reviews, setReviews] = useState([]);
   //Pull all Reviews from db
-  useEffect(() => {
-    fetch("/reviews")
-      .then((r) => r.json())
-      .then((data) => setReviews(data));
-  }, []);
+  // useEffect(() => {
+  //   fetch("/reviews")
+  //     .then((r) => r.json())
+  //     .then((data) => setReviews(data));
+  // }, []);
 
-  const reviewRow = reviews.map((e) => {
+  const reviewRow = reviewLists?.map((e) => {
     return (
       <div className="reviewcontainer">
         <span className="reviewinfo">Review ID: {e.id}</span>

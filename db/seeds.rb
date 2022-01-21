@@ -43,6 +43,15 @@ dragonfly =
     hours: 'M-F 8am - 6pm',
     test_type: 'PCR & Antigen',
   )
+catalpa =
+  TestingSite.create(
+    name: 'Catalpa Chemists Pharmacy',
+    rating: 3,
+    location: '57-01 Catalpa Ave, Queens, NY, 11385',
+    contact: '718 366 3871',
+    hours: 'M-F 8am - 7pm',
+    test_type: 'PCR & Antigen',
+  )
 
 puts 'New Reviews.......🗣️🗣️🗣️'
 
