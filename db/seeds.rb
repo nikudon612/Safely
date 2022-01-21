@@ -20,6 +20,8 @@ rapidnyc =
   TestingSite.create(
     name: 'Rapid NYC',
     rating: 2,
+    lat: 40.70059352680852,
+    lng: -73.91352288195964,
     location: '380 Grove St, Ridgewood, NY',
     contact: '888-727-4308',
     hours: 'M-F 9am - 5pm',
@@ -41,6 +43,15 @@ dragonfly =
     location: '315 Wyckoff Ave, Brooklyn, NY',
     contact: 'N/A',
     hours: 'M-F 8am - 6pm',
+    test_type: 'PCR & Antigen',
+  )
+catalpa =
+  TestingSite.create(
+    name: 'Catalpa Chemists Pharmacy',
+    rating: 3,
+    location: '57-01 Catalpa Ave, Queens, NY, 11385',
+    contact: '718 366 3871',
+    hours: 'M-F 8am - 7pm',
     test_type: 'PCR & Antigen',
   )
 

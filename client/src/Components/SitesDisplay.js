@@ -6,6 +6,8 @@ function SitesDisplay({
   handleReviewClick,
   handleAdd,
   handleReviews,
+  reviewLists,
+  handleClick,
 }) {
   const sitesmapped = siteLists.map((e) => {
     return (
@@ -21,6 +23,10 @@ function SitesDisplay({
         handleReviewClick={handleReviewClick}
         handleAdd={handleAdd}
         handleReviews={handleReviews}
+        siteLists={siteLists}
+        reviewLists={reviewLists}
+        handleClick={handleClick}
+
         // handleEventDelete={handleEventDelete}
       />
     );

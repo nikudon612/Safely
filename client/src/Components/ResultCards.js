@@ -10,15 +10,26 @@ function ResultCards({
   hours,
   testtype,
   handleReviewClick,
+  handleClick,
   handleReviews,
+  siteLists,
+  setReviewLists,
   handleAdd,
   user,
 }) {
+  // function handleClick(e) {
+  //   console.log(e.target.value);
+  //   const sitename = e.target.value;
+  //   const sl = siteLists.find((sn) => sn.id === sitename);
+  //   setReviewLists(sl.reviews);
+  // }
   return (
     <div className="resultscard">
       <div className="resultinfo">
         <div className="sitecontainer">
-          <span className="sitename">{name}</span>
+          <option className="sitename" onClick={handleClick}>
+            {name}
+          </option>
           <span
             id="reviewpopup"
             // onClick={() => setButtonPopup(true)}
@@ -29,9 +40,7 @@ function ResultCards({
           <span>{location}</span>
           <span>Contact: {contact}</span>
           <span>Hours: {hours}</span>
-          <span id="reviewreviews" onClick={handleReviews}>
-            REVIEWS
-          </span>
+          <span id="reviewreviews">REVIEWS</span>
         </div>
       </div>
       <hr></hr>
