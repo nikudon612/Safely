@@ -381,7 +381,7 @@ a {
   flex-direction: row;
   justify-content: center;
   /* border: 1px solid black; */
-  margin-top: 20px;
+  margin-top: 33px;
   /* height: 100px; */
   align-items: center;
   font-weight: bold;
@@ -400,9 +400,19 @@ hr {
   line-height: 30px;
 }
 
+.sitecontainer span {
+  margin: 2px;
+}
+
 .sitename {
   font-weight: bold;
   font-size: x-large;
+  cursor: pointer;
+}
+
+.sitename:hover {
+  transition: 0.3s;
+  color: rgba(27, 27, 27, 0.4);
 }
 
 .testbox {

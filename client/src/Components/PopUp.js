@@ -5,6 +5,7 @@ function PopUp(props) {
   //States for handle submit review form
   const [rating, setRating] = useState("");
   const [comment, setComment] = useState("");
+  const [siteName, setSiteName] = useState("");
   // const [user_id, setUser_id] = useState("");
   // const [testing_site_id, setTesting_site_id] = useState("");
 
@@ -21,7 +22,7 @@ function PopUp(props) {
         rating: rating,
         comment: comment,
         user_id: props.user.id,
-        // testing_site_id: testing_site_id,
+        testing_site_id: siteName,
       }),
     })
       .then((r) => r.json())
@@ -37,6 +38,13 @@ function PopUp(props) {
             id="prating"
             onChange={(e) => setRating(e.target.value)}
             placeholder="Enter a number from 1-5."
+          ></input>
+          <br />
+          <br />
+          <p>Testing Site</p>
+          <input
+            onChange={(e) => setSiteName(e.target.value)}
+            placeholder="Name of Testing Site"
           ></input>
           <br />
           <br />

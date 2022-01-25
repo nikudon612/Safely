@@ -1,5 +1,4 @@
 import "./Review.css";
-import { useEffect, useState } from "react";
 
 function Review(props) {
   //State for reviews
@@ -27,7 +26,6 @@ function Review(props) {
       </div>
     );
   });
-
 
   return props.trigger ? <div id="reviewbox">{reviewRows}</div> : "";
 }

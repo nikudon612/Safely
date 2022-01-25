@@ -7,9 +7,10 @@ import {
   Marker,
   InfoWindow,
 } from "@react-google-maps/api";
+import Geocode from "react-geocode";
 import Sites from "./Sites";
 
-export const MapContainer = ({
+const MapContainer = ({
   handleReviewClick,
   handleAdd,
   handleReviews,
@@ -25,9 +26,39 @@ export const MapContainer = ({
   //State for fetching location data
   const [sites, setSites] = useState([]);
   //State for lat lng
-  const [position, setPosition] = useState([]);
+  // const [position, setPosition] = useState([]);
+  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  //GEOCODE TEST
 
+  // console.log(process.env.REACT_APP_API_Key);
+
+  Geocode.setApiKey("AIzaSyBYWFT1yL5ChgLP0C9KlDuc9yzZKfZUzt8");
+  Geocode.setLanguage("en");
+  Geocode.setLocationType("ROOFTOP");
+  // GET ADDRESS FROM LAT LNG
+  // Geocode.fromLatLng("48.8583701", "2.2922926").then(
+  //   (response) => {
+  //     const address = response.results[0].formatted_address;
+  //     console.log(address);
+  //   },
+  //   (error) => {
+  //     console.error(error);
+  //   }
+  // );
+
+  //GET LAT LNG FROM ADDRESS
+  // Geocode.fromAddress("315 Wyckoff Ave, Brooklyn, NY").then(
+  //   (response) => {
+  //     const { lat, lng } = response.results[0].geometry.location;
+  //     console.log(lat, lng);
+  //   },
+  //   (error) => {
+  //     console.error(error);
+  //   }
+  // );
+  //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   //Fetch for site data to create markers
+
   useEffect(() => {
     fetch("/sites")
       .then((r) => r.json())
@@ -61,63 +92,74 @@ export const MapContainer = ({
   };
 
   // LOCATIONS FOR GOOGLE MAPS PINS. NEED TO UPDATE THIS DATA W SEEDS
-  const locations = [
-    {
-      // RAPID NYC 40.70059352680852, -73.91352288195964
-      name: "RAPID NYC",
-      location: {
-        lat: 40.70059352680852,
-        lng: -73.91352288195964,
-      },
-      address: "380 Grove Street, Ridgewood, NY",
-      hours: "M-F 8am - 6pm",
-      comment: "this place is great!",
-    },
-    {
-      // ORO LATINO 40.71730731019591, -73.99582819413783
-      name: "ORO LATINO",
-      location: {
-        lat: 40.71730731019591,
-        lng: -73.99582819413783,
-      },
-      address: "82 Bowery St, NYC, NY",
-      hours: "M-F 8am - 6pm",
-    },
-    {
-      // KETTL TEA 40.72675608568842, -73.99195461335529
-      name: "KETTL TEA",
-      location: {
-        lat: 40.72675608568842,
-        lng: -73.99195461335529,
-      },
-      address: "348 Bowery St, NYC, NY",
-      hours: "M-F 8am - 6pm",
-    },
-    {
-      //40.70459689268391, -73.91756436820366
-      name: "Wyckoff Heights Medical Center",
-      location: {
-        lat: 40.70459689268391,
-        lng: -73.91756436820366,
-      },
-      address: "374 Stockholm St, Ridgewood, NY",
-      hours: "M-F 8am - 6pm",
-    },
-    {
-      //40.700339128774, -73.90835490586235
-      name: "Northwell Health-GoHealth",
-      location: {
-        lat: 40.700339128774,
-        lng: -73.90835490586235,
-      },
-      address: "55-05 Myrtle Ave, Ridgewood, NY",
-      hours: "M-F 8am - 6pm",
-    },
-  ];
+  // const locations = [
+  //   {
+  //     // RAPID NYC 40.70059352680852, -73.91352288195964
+  //     name: "RAPID NYC",
+  //     location: {
+  //       lat: 40.70059352680852,
+  //       lng: -73.91352288195964,
+  //     },
+  //     address: "380 Grove Street, Ridgewood, NY",
+  //     hours: "M-F 8am - 6pm",
+  //     comment: "this place is great!",
+  //   },
+  //   {
+  //     // ORO LATINO 40.71730731019591, -73.99582819413783
+  //     name: "ORO LATINO",
+  //     location: {
+  //       lat: 40.71730731019591,
+  //       lng: -73.99582819413783,
+  //     },
+  //     address: "82 Bowery St, NYC, NY",
+  //     hours: "M-F 8am - 6pm",
+  //   },
+  //   {
+  //     // KETTL TEA 40.72675608568842, -73.99195461335529
+  //     name: "KETTL TEA",
+  //     location: {
+  //       lat: 40.72675608568842,
+  //       lng: -73.99195461335529,
+  //     },
+  //     address: "348 Bowery St, NYC, NY",
+  //     hours: "M-F 8am - 6pm",
+  //   },
+  //   {
+  //     //40.70459689268391, -73.91756436820366
+  //     name: "Wyckoff Heights Medical Center",
+  //     location: {
+  //       lat: 40.70459689268391,
+  //       lng: -73.91756436820366,
+  //     },
+  //     address: "374 Stockholm St, Ridgewood, NY",
+  //     hours: "M-F 8am - 6pm",
+  //   },
+  //   {
+  //     //40.700339128774, -73.90835490586235
+  //     name: "Northwell Health-GoHealth",
+  //     location: {
+  //       lat: 40.700339128774,
+  //       lng: -73.90835490586235,
+  //     },
+  //     address: "55-05 Myrtle Ave, Ridgewood, NY",
+  //     hours: "M-F 8am - 6pm",
+  //   },
+  // ];
   const mapStyles = {
     height: "89vh",
     width: "65%",
   };
+
+  // Make address equal to lat&lng
+  //input: address which is a string
+  // "315 Wyckoff Ave, Brooklyn, NY"
+  //output: lat & lng which are floats inside of an object.
+  // {lat: 40.7001958, lng: -73.9117555}
+
+  function convertAddress(address) {
+    address = { lat, lng };
+    convertAddress("315 Wyckoff Ave, Brooklyn, NY");
+  }
 
   return (
     <div id="map">
@@ -136,7 +178,6 @@ export const MapContainer = ({
             setSiteLists={setSiteLists}
             handleClick={handleClick}
           />
-          {/* <ResultCards /> */}
         </div>
       </div>
       <LoadScript
@@ -155,13 +196,13 @@ export const MapContainer = ({
               draggable={true}
             />
           ) : null}
-          {/* {currentPosition.lat && <Marker position={currentPosition} />} */}
+          {currentPosition.lat && <Marker position={currentPosition} />}
 
-          {locations.map((item) => {
+          {sites.map((item) => {
             return (
               <Marker
                 key={item.name}
-                position={item.location}
+                position={convertAddress}
                 hours={item.hours}
                 onClick={() => onSelect(item)}
               />

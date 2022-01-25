@@ -10,7 +10,6 @@ import Sites from "./Components/Sites";
 import Tests from "./Components/Tests";
 import Account from "./Components/Account";
 import HomePage from "./Components/HomePage";
-import Reviews from "./Components/Review";
 
 function App() {
   //User state for login
