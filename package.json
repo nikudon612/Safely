@@ -11,6 +11,8 @@
     "heroku-postbuild": "npm run clean && npm run build && npm run deploy"
   },
   "dependencies": {
-    "react-geocode": "^0.2.3"
+    "@reach/combobox": "^0.16.5",
+    "react-geocode": "^0.2.3",
+    "use-places-autocomplete": "^1.11.0"
   }
 }
