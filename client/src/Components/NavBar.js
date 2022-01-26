@@ -18,9 +18,9 @@ function NavBar({ user, setUser }) {
       </Link>
       <br />
       <ul id="menuList">
-        <li>
+        {/* <li>
           <Link to="/sites">TESTING SITES</Link>
-        </li>
+        </li> */}
         {/* <li>
           
           <Link to="/reviews">REVIEWS</Link>

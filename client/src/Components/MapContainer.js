@@ -28,20 +28,16 @@ function MapContainer({
 }) {
   //new code from tut
   //libraries and styling
-  const libraries = ["places"];
   const mapContainerStyle = {
     height: "89vh",
     width: "65%",
   };
+
   const center = {
-    lat: 43.6532,
-    lng: -79.3832,
+    lat: 40.72061933905381,
+    lng: -73.99466332551746,
   };
-  //loading map and api key and libraries
-  const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: process.env.REACT_APP_API_KEY,
-    libraries,
-  });
+
   const [markers, setMarkers] = React.useState([]);
   //State for selecting markers
   const [selected, setSelected] = useState({});
@@ -52,6 +48,16 @@ function MapContainer({
   //State for lat lng
   const [coordinates, setCoordinates] = useState({});
 
+  const onMapClick = React.useCallback((e) => {
+    setMarkers((current) => [
+      ...current,
+      {
+        lat: e.latLng.lat(),
+        lng: e.latLng.lng(),
+        time: new Date(),
+      },
+    ]);
+  }, []);
   //use to hold map info for panning
   const mapRef = React.useRef();
 
@@ -59,21 +65,15 @@ function MapContainer({
     mapRef.current = map;
   }, []);
 
+  const panTo = React.useCallback(({ lat, lng }) => {
+    mapRef.current.panTo({ lat, lng });
+    mapRef.current.setZoom(14);
+  }, []);
+
   //Setting state for info windows on markers
   const onSelect = (item) => {
     setSelected(item);
   };
-
-  // useEffect(() => {
-  //   fetch("/sites")
-  //     .then((r) => r.json())
-  //     .then((data) => setSites(data));
-  // }, []);
-  // console.log(sites);
-
-  // error messages
-  if (loadError) return "Error";
-  if (!isLoaded) return "Loading...";
 
   return (
     <div id="map">
@@ -94,23 +94,21 @@ function MapContainer({
           />
         </div>
       </div>
-
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
         zoom={13}
         center={center}
         onLoad={onMapLoad}
       >
-        {sites.map((item) => {
-          return (
-            <Marker
-              key={item.name}
-              // position={}
-              hours={item.hours}
-              onClick={() => onSelect(item)}
-            />
-          );
-        })}
+        {markers.map((marker) => (
+          <Marker
+            key={`${marker.lat}-${marker.lng}`}
+            position={{ lat: marker.lat, lng: marker.lng }}
+            onClick={() => {
+              setSelected(marker);
+            }}
+          />
+        ))}
       </GoogleMap>
     </div>
   );
