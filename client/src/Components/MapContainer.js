@@ -76,7 +76,8 @@ function MapContainer({
       <div id="resultsContainer">
         <div id="searchbox">
           <div id="urLocation">Your Location</div>
-          <input id="search" placeholder="Enter your City..."></input>
+          {/* <input  placeholder="Enter your City..."></input> */}
+          <Search id="search" panTo={panTo} />
         </div>
         <div id="resultsbox">
           <Sites
@@ -90,7 +91,6 @@ function MapContainer({
           />
         </div>
       </div>
-      <Search panTo={panTo} />
 
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
