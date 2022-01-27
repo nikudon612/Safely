@@ -11,12 +11,7 @@ import {
   ComboboxOption,
 } from "@reach/combobox";
 import React, { useState, useEffect } from "react";
-import {
-  GoogleMap,
-  Marker,
-  InfoWindow,
-  useLoadScript,
-} from "@react-google-maps/api";
+import { GoogleMap, Marker, InfoWindow } from "@react-google-maps/api";
 import Sites from "./Sites";
 import { formatRelative } from "date-fns";
 // import Search from "./Search";
@@ -44,7 +39,7 @@ function MapContainer({
 
   const [markers, setMarkers] = useState([]);
   //State for selecting markers
-  const [selected, setSelected] = useState({});
+  const [selected, setSelected] = useState(null);
   //State for geolocation position
   const [currentPosition, setCurrentPosition] = useState({});
   //State for fetching location data
@@ -58,6 +53,7 @@ function MapContainer({
       {
         lat: e.latLng.lat(),
         lng: e.latLng.lng(),
+        time: new Date(),
       },
     ]);
   }, []);
@@ -69,16 +65,9 @@ function MapContainer({
   }, []);
 
   //Setting state for info windows on markers
-  // const onSelect = (item) => {
-  //   setSelected(item);
-  // };
-
-  //Fetch for site data to create markers
-  // useEffect(() => {
-  //   fetch("/sites")
-  //     .then((r) => r.json())
-  //     .then((data) => setSites(data));
-  // }, []);
+  const onSelect = (marker) => {
+    setSelected(marker);
+  };
 
   return (
     <div id="map">
@@ -107,21 +96,18 @@ function MapContainer({
         zoom={13}
         center={center}
         onLoad={onMapLoad}
-        // onClick={onMapClick}
         onClick={onMapClick}
       >
-        {markers.map((marker) => (
-          <Marker
-            key={marker.time.toISOString()}
-            position={{ lat: marker.lat, lng: marker.lng }}
-            onClick={() => {
-              console.log(marker);
-              // setSelected(marker);
-            }}
-          />
-        ))}
-
-        {/* {selected.marker && (
+        {markers.map((marker) => {
+          return (
+            <Marker
+              key={marker.time.toISOString()}
+              position={{ lat: marker.lat, lng: marker.lng }}
+              onClick={() => onSelect(marker)}
+            />
+          );
+        })}
+        {selected ? (
           <InfoWindow
             position={{ lat: selected.lat, lng: selected.lng }}
             onCloseClick={() => {
@@ -129,10 +115,15 @@ function MapContainer({
             }}
           >
             <div>
-              <h1>{selected.name}</h1>
+              <h2>
+                <span role="img" aria-label="snowboard">
+                  🏂
+                </span>{" "}
+                Let's Go Here!
+              </h2>
             </div>
           </InfoWindow>
-        )} */}
+        ) : null}
       </GoogleMap>
     </div>
   );
