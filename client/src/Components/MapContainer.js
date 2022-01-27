@@ -1,20 +1,19 @@
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-import usePlacesAutocomplete, {
-  getGeocode,
-  getLatLng,
-} from "use-places-autocomplete";
-import {
-  Combobox,
-  ComboboxInput,
-  ComboboxPopover,
-  ComboboxList,
-  ComboboxOption,
-} from "@reach/combobox";
+// import usePlacesAutocomplete, {
+//   getGeocode,
+//   getLatLng,
+// } from "use-places-autocomplete";
+// import {
+//   Combobox,
+//   ComboboxInput,
+//   ComboboxPopover,
+//   ComboboxList,
+//   ComboboxOption,
+// } from "@reach/combobox";
+import { formatRelative } from "date-fns";
 import React, { useState, useEffect } from "react";
 import { GoogleMap, Marker, InfoWindow } from "@react-google-maps/api";
 import Sites from "./Sites";
-import { formatRelative } from "date-fns";
-// import Search from "./Search";
+import Search from "./Search";
 
 function MapContainer({
   handleReviewClick,
@@ -43,10 +42,9 @@ function MapContainer({
   //State for geolocation position
   const [currentPosition, setCurrentPosition] = useState({});
   //State for fetching location data
-  const [sites, setSites] = useState([]);
-  //State for lat lng
-  const [coordinates, setCoordinates] = useState({});
+  // const [sites, setSites] = useState([]);
 
+  //Mapclick for setting coordinates of
   const onMapClick = React.useCallback((e) => {
     setMarkers((current) => [
       ...current,
@@ -59,9 +57,13 @@ function MapContainer({
   }, []);
   //use to hold map info for panning
   const mapRef = React.useRef();
-
   const onMapLoad = React.useCallback((map) => {
     mapRef.current = map;
+  }, []);
+  //Pans to location after search
+  const panTo = React.useCallback(({ lat, lng }) => {
+    mapRef.current.panTo({ lat, lng });
+    mapRef.current.setZoom(15);
   }, []);
 
   //Setting state for info windows on markers
@@ -71,6 +73,8 @@ function MapContainer({
 
   return (
     <div id="map">
+      <Search panTo={panTo} />
+
       <div id="resultsContainer">
         <div id="searchbox">
           <div id="urLocation">Your Location</div>
@@ -88,9 +92,6 @@ function MapContainer({
           />
         </div>
       </div>
-      {/* <div id="PlacesSearch">
-        <Search />
-      </div> */}
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
         zoom={13}
