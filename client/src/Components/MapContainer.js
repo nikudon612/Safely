@@ -67,9 +67,9 @@ function MapContainer({
   }, []);
 
   //Setting state for info windows on markers
+
   const onSelect = (marker) => {
     setSelected(marker);
-  };
 
   return (
     <div id="map">
