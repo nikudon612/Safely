@@ -1,12 +1,8 @@
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-import React, { useState, useEffect } from "react";
-import {
-  GoogleMap,
-  Marker,
-  InfoWindow,
-  useLoadScript,
-} from "@react-google-maps/api";
+import usePlacesAutocomplete, {
+  getGeocode,
+  getLatLng,
+} from "use-places-autocomplete";
 import {
   Combobox,
   ComboboxInput,
@@ -14,8 +10,16 @@ import {
   ComboboxList,
   ComboboxOption,
 } from "@reach/combobox";
-import usePlacesAutocomplete from "use-places-autocomplete";
+import React, { useState, useEffect } from "react";
+import {
+  GoogleMap,
+  Marker,
+  InfoWindow,
+  useLoadScript,
+} from "@react-google-maps/api";
 import Sites from "./Sites";
+import { formatRelative } from "date-fns";
+// import Search from "./Search";
 
 function MapContainer({
   handleReviewClick,
@@ -38,7 +42,7 @@ function MapContainer({
     lng: -73.99466332551746,
   };
 
-  const [markers, setMarkers] = React.useState([]);
+  const [markers, setMarkers] = useState([]);
   //State for selecting markers
   const [selected, setSelected] = useState({});
   //State for geolocation position
@@ -54,7 +58,6 @@ function MapContainer({
       {
         lat: e.latLng.lat(),
         lng: e.latLng.lng(),
-        time: new Date(),
       },
     ]);
   }, []);
@@ -65,15 +68,17 @@ function MapContainer({
     mapRef.current = map;
   }, []);
 
-  const panTo = React.useCallback(({ lat, lng }) => {
-    mapRef.current.panTo({ lat, lng });
-    mapRef.current.setZoom(14);
-  }, []);
-
   //Setting state for info windows on markers
-  const onSelect = (item) => {
-    setSelected(item);
-  };
+  // const onSelect = (item) => {
+  //   setSelected(item);
+  // };
+
+  //Fetch for site data to create markers
+  // useEffect(() => {
+  //   fetch("/sites")
+  //     .then((r) => r.json())
+  //     .then((data) => setSites(data));
+  // }, []);
 
   return (
     <div id="map">
@@ -94,21 +99,40 @@ function MapContainer({
           />
         </div>
       </div>
+      {/* <div id="PlacesSearch">
+        <Search />
+      </div> */}
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
         zoom={13}
         center={center}
         onLoad={onMapLoad}
+        // onClick={onMapClick}
+        onClick={onMapClick}
       >
         {markers.map((marker) => (
           <Marker
-            key={`${marker.lat}-${marker.lng}`}
+            key={marker.time.toISOString()}
             position={{ lat: marker.lat, lng: marker.lng }}
             onClick={() => {
-              setSelected(marker);
+              console.log(marker);
+              // setSelected(marker);
             }}
           />
         ))}
+
+        {/* {selected.marker && (
+          <InfoWindow
+            position={{ lat: selected.lat, lng: selected.lng }}
+            onCloseClick={() => {
+              setSelected(null);
+            }}
+          >
+            <div>
+              <h1>{selected.name}</h1>
+            </div>
+          </InfoWindow>
+        )} */}
       </GoogleMap>
     </div>
   );
