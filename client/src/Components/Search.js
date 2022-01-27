@@ -12,13 +12,24 @@ import {
 } from "@reach/combobox";
 import "@reach/combobox/styles.css";
 
-const Search = ({ panTo }) => {
+function Search({ panTo }) {
   const {
+    ready,
     value,
     setValue,
     suggestions: { status, data },
     clearSuggestions,
-  } = usePlacesAutocomplete();
+  } = usePlacesAutocomplete({
+    requestOptions: {
+      location: { lat: () => 39.27709, lng: () => -95.11749 },
+      radius: 100 * 1000,
+    },
+  });
+
+  //   const value = { value: "100" };
+  //   const setValue = { setValue: null };
+  //   const suggestions = { status: "status", data: "data" };
+  //   const clearSuggestions = { clearSuggestions };
 
   const handleInput = (e) => {
     setValue(e.target.value);
@@ -39,12 +50,12 @@ const Search = ({ panTo }) => {
   };
 
   return (
-    <div className="search">
+    <div className="cbsearch">
       <Combobox onSelect={handleSelect}>
         <ComboboxInput
           value={value}
           onChange={handleInput}
-          //   disabled={!ready}
+          disabled={!ready}
           placeholder="Enter your city..."
         />
         <ComboboxPopover>
@@ -58,6 +69,6 @@ const Search = ({ panTo }) => {
       </Combobox>
     </div>
   );
-};
+}
 
 export default Search;

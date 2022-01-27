@@ -607,6 +607,13 @@ hr {
 #reviewreviews:hover {
   cursor: pointer;
 }
+
+.cbsearch {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  color: black;
+}
 /* #testscroll {
   overflow: scroll;
 } */
