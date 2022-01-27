@@ -73,12 +73,10 @@ function MapContainer({
 
   return (
     <div id="map">
-      <Search panTo={panTo} />
-
       <div id="resultsContainer">
         <div id="searchbox">
           <div id="urLocation">Your Location</div>
-          <input id="search" placeholder="Enter your City or Zip"></input>
+          <input id="search" placeholder="Enter your City..."></input>
         </div>
         <div id="resultsbox">
           <Sites
@@ -92,6 +90,8 @@ function MapContainer({
           />
         </div>
       </div>
+      <Search panTo={panTo} />
+
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
         zoom={13}
@@ -116,12 +116,8 @@ function MapContainer({
             }}
           >
             <div>
-              <h2>
-                <span role="img" aria-label="snowboard">
-                  🏂
-                </span>{" "}
-                Let's Go Here!
-              </h2>
+              <p>lat: {selected.lat}</p>
+              <p>lng: {selected.lng}</p>
             </div>
           </InfoWindow>
         ) : null}
