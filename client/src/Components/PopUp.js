@@ -41,13 +41,13 @@ function PopUp(props) {
           ></input>
           <br />
           <br />
-          <p>Testing Site</p>
+          {/* <p>Testing Site</p>
           <input
             onChange={(e) => setSiteName(e.target.value)}
             placeholder="Name of Testing Site"
           ></input>
           <br />
-          <br />
+          <br /> */}
           <p>COMMENT</p>
           <input
             id="pcomment"
