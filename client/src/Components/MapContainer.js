@@ -63,7 +63,7 @@ function MapContainer({
   //Pans to location after search
   const panTo = React.useCallback(({ lat, lng }) => {
     mapRef.current.panTo({ lat, lng });
-    mapRef.current.setZoom(15);
+    mapRef.current.setZoom(14);
   }, []);
 
   //Setting state for info windows on markers
