@@ -10,7 +10,7 @@ import Sites from "./Components/Sites";
 import Tests from "./Components/Tests";
 import Account from "./Components/Account";
 import HomePage from "./Components/HomePage";
-import Reviews from "./Components/Review";
+import MapContainer from "./Components/MapContainer";
 
 function App() {
   //User state for login

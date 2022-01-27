@@ -1,15 +1,21 @@
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
+// import usePlacesAutocomplete, {
+//   getGeocode,
+//   getLatLng,
+// } from "use-places-autocomplete";
+// import {
+//   Combobox,
+//   ComboboxInput,
+//   ComboboxPopover,
+//   ComboboxList,
+//   ComboboxOption,
+// } from "@reach/combobox";
+import { formatRelative } from "date-fns";
 import React, { useState, useEffect } from "react";
-import {
-  GoogleMap,
-  LoadScript,
-  Marker,
-  InfoWindow,
-} from "@react-google-maps/api";
+import { GoogleMap, Marker, InfoWindow } from "@react-google-maps/api";
 import Sites from "./Sites";
+import Search from "./Search";
 
-export const MapContainer = ({
+function MapContainer({
   handleReviewClick,
   handleAdd,
   handleReviews,
@@ -17,122 +23,60 @@ export const MapContainer = ({
   siteLists,
   setSiteLists,
   handleClick,
-}) => {
-  //State for selecting markers
-  const [selected, setSelected] = useState({});
-  //State for geolocation position
-  const [currentPosition, setCurrentPosition] = useState({});
-  //State for fetching location data
-  const [sites, setSites] = useState([]);
-  //State for lat lng
-  const [position, setPosition] = useState([]);
-
-  //Fetch for site data to create markers
-  useEffect(() => {
-    fetch("/sites")
-      .then((r) => r.json())
-      .then((data) => setSites(data));
-  }, []);
-  // console.log(sites);
-
-  //Variable for geolocating position
-  const success = (position) => {
-    const currentPosition = {
-      lat: position.coords.latitude,
-      lng: position.coords.longitude,
-    };
-    setCurrentPosition(currentPosition);
-  };
-
-  useEffect(() => {
-    navigator.geolocation.getCurrentPosition(success);
-  });
-
-  //Variable for draggable markers
-  const onMarkerDragEnd = (e) => {
-    const lat = e.latLng.lat();
-    const lng = e.latLng.lng();
-    setCurrentPosition({ lat, lng });
-  };
-
-  //Setting state for info windows on markers
-  const onSelect = (item) => {
-    setSelected(item);
-  };
-
-  //Handle for search
-  function handleSubmit(city) {
-    const newArea = ["city converted to lng lat"];
-    setCurrentPosition(newArea);
-  }
-
-  // LOCATIONS FOR GOOGLE MAPS PINS. NEED TO UPDATE THIS DATA W SEEDS
-  const locations = [
-    {
-      // RAPID NYC 40.70059352680852, -73.91352288195964
-      name: "RAPID NYC",
-      location: {
-        lat: 40.70059352680852,
-        lng: -73.91352288195964,
-      },
-      address: "380 Grove Street, Ridgewood, NY",
-      hours: "M-F 8am - 6pm",
-      comment: "this place is great!",
-    },
-    {
-      // ORO LATINO 40.71730731019591, -73.99582819413783
-      name: "ORO LATINO",
-      location: {
-        lat: 40.71730731019591,
-        lng: -73.99582819413783,
-      },
-      address: "82 Bowery St, NYC, NY",
-      hours: "M-F 8am - 6pm",
-    },
-    {
-      // KETTL TEA 40.72675608568842, -73.99195461335529
-      name: "KETTL TEA",
-      location: {
-        lat: 40.72675608568842,
-        lng: -73.99195461335529,
-      },
-      address: "348 Bowery St, NYC, NY",
-      hours: "M-F 8am - 6pm",
-    },
-    {
-      //40.70459689268391, -73.91756436820366
-      name: "Wyckoff Heights Medical Center",
-      location: {
-        lat: 40.70459689268391,
-        lng: -73.91756436820366,
-      },
-      address: "374 Stockholm St, Ridgewood, NY",
-      hours: "M-F 8am - 6pm",
-    },
-    {
-      //40.700339128774, -73.90835490586235
-      name: "Northwell Health-GoHealth",
-      location: {
-        lat: 40.700339128774,
-        lng: -73.90835490586235,
-      },
-      address: "55-05 Myrtle Ave, Ridgewood, NY",
-      hours: "M-F 8am - 6pm",
-    },
-  ];
-  const mapStyles = {
+}) {
+  //new code from tut
+  //libraries and styling
+  const mapContainerStyle = {
     height: "89vh",
     width: "65%",
   };
+
+  const center = {
+    lat: 40.72061933905381,
+    lng: -73.99466332551746,
+  };
+
+  const [markers, setMarkers] = useState([]);
+  //State for selecting markers
+  const [selected, setSelected] = useState(null);
+  //State for geolocation position
+  const [currentPosition, setCurrentPosition] = useState({});
+  //State for fetching location data
+  // const [sites, setSites] = useState([]);
+
+  //Mapclick for setting coordinates of
+  const onMapClick = React.useCallback((e) => {
+    setMarkers((current) => [
+      ...current,
+      {
+        lat: e.latLng.lat(),
+        lng: e.latLng.lng(),
+        time: new Date(),
+      },
+    ]);
+  }, []);
+  //use to hold map info for panning
+  const mapRef = React.useRef();
+  const onMapLoad = React.useCallback((map) => {
+    mapRef.current = map;
+  }, []);
+  //Pans to location after search
+  const panTo = React.useCallback(({ lat, lng }) => {
+    mapRef.current.panTo({ lat, lng });
+    mapRef.current.setZoom(15);
+  }, []);
+
+  //Setting state for info windows on markers
+
+  const onSelect = (marker) => {
+    setSelected(marker);
 
   return (
     <div id="map">
       <div id="resultsContainer">
         <div id="searchbox">
-          <form onSubmit={handleSubmit}>
-            <div id="urLocation">Your Location</div>
-            <input id="search" placeholder="Enter your City or Zip"></input>
-          </form>
+          <div id="urLocation">Your Location</div>
+          <input id="search" placeholder="Enter your City..."></input>
         </div>
         <div id="resultsbox">
           <Sites
@@ -144,53 +88,42 @@ export const MapContainer = ({
             setSiteLists={setSiteLists}
             handleClick={handleClick}
           />
-          {/* <ResultCards /> */}
         </div>
       </div>
-      <LoadScript
-        googleMapsApiKey="AIzaSyBYWFT1yL5ChgLP0C9KlDuc9yzZKfZUzt8"
-        // libraries="places"
-      >
-        <GoogleMap
-          mapContainerStyle={mapStyles}
-          zoom={13}
-          center={currentPosition}
-        >
-          {currentPosition.lat ? (
-            <Marker
-              position={currentPosition}
-              onDragEnd={(e) => onMarkerDragEnd(e)}
-              draggable={true}
-            />
-          ) : null}
-          {/* {currentPosition.lat && <Marker position={currentPosition} />} */}
+      <Search panTo={panTo} />
 
-          {locations.map((item) => {
-            return (
-              <Marker
-                key={item.name}
-                position={item.location}
-                hours={item.hours}
-                onClick={() => onSelect(item)}
-              />
-            );
-          })}
-          {selected.location && (
-            <InfoWindow
-              position={selected.location}
-              clickable={true}
-              onCloseClick={() => setSelected({})}
-            >
-              <div>
-                <p>{selected.name}</p>
-                <p>{selected.address}</p>
-                <p>{selected.hours}</p>
-              </div>
-            </InfoWindow>
-          )}
-        </GoogleMap>
-      </LoadScript>
+      <GoogleMap
+        mapContainerStyle={mapContainerStyle}
+        zoom={13}
+        center={center}
+        onLoad={onMapLoad}
+        onClick={onMapClick}
+      >
+        {markers.map((marker) => {
+          return (
+            <Marker
+              key={marker.time.toISOString()}
+              position={{ lat: marker.lat, lng: marker.lng }}
+              onClick={() => onSelect(marker)}
+            />
+          );
+        })}
+        {selected ? (
+          <InfoWindow
+            position={{ lat: selected.lat, lng: selected.lng }}
+            onCloseClick={() => {
+              setSelected(null);
+            }}
+          >
+            <div>
+              <p>lat: {selected.lat}</p>
+              <p>lng: {selected.lng}</p>
+            </div>
+          </InfoWindow>
+        ) : null}
+      </GoogleMap>
     </div>
   );
-};
+}
+
 export default MapContainer;

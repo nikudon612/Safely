@@ -16,7 +16,7 @@ function SitesDisplay({
         key={e.id}
         name={e.name}
         rating={e.rating}
-        location={e.location}
+        address={e.address}
         contact={e.contact}
         hours={e.hours}
         testtype={e.test_type}

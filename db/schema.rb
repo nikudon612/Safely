@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2022_01_12_164350) do
     t.integer "rating"
     t.integer "lat"
     t.integer "lng"
-    t.string "location"
+    t.string "address"
     t.string "contact"
     t.string "hours"
     t.string "test_type"

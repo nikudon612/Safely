@@ -4,7 +4,7 @@ class TestingSiteSerializer < ActiveModel::Serializer
              :rating,
              :lat,
              :lng,
-             :location,
+             :address,
              :contact,
              :hours,
              :test_type,

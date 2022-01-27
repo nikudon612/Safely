@@ -43,10 +43,13 @@ function Results({ user }) {
     setButtonPopup(true);
   }
   //Function to add a new review
-  function handleAdd(newReview) {
+  function handleAdd(newReview, e) {
     console.log("Submit button has been clicked!");
+    console.log(newReview);
     const addReview = [...reviewLists, newReview];
+    // debugger;
     setReviewLists(addReview);
+    console.log(reviewLists);
     setButtonPopup(false);
   }
 

@@ -5,7 +5,7 @@ class CreateTestingSites < ActiveRecord::Migration[6.1]
       t.integer :rating
       t.integer :lat
       t.integer :lng
-      t.string :location
+      t.string :address
       t.string :contact
       t.string :hours
       t.string :test_type
