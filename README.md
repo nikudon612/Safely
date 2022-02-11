@@ -4,7 +4,7 @@
 ## Developers
 - [Nick Bechtel](https://www.linkedin.com/in/nicholasbechtel/)
 
-## Summary
+## Project Summary
 Safely is an App that provides COVID-19 testing site data to our users. 
 
 Primarily, we wanted to focus on creating a one-stop-shop for COVID testing sites. As we have noticed over the pandemic, that it has been increasingly difficult to find accurate information on COVID-19, especially available testing sites. 
