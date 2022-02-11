@@ -1,5 +1,5 @@
 <h1>Live Deployment</h1>
-- [Safely](https://nikudon612.github.io/Safely/)
+[Safely](https://nikudon612.github.io/Safely/)
 
 <h1>Summary</h1>
 Safely is an App that provides COVID-19 testing site data to our users. 
