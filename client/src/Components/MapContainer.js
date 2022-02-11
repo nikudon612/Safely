@@ -157,7 +157,7 @@ function MapContainer({
           return (
             <Marker
               key={marker.name}
-              position={{ lat: marker.lat, lng: marker.lng }}
+              position={marker.location}
               hours={marker.hours}
               // onClick={() => onSelect(marker)}
             />
