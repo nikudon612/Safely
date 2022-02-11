@@ -1,5 +1,4 @@
 <h1>Live Deployment</h1>
-<hr/>
 - [Safely](https://nikudon612.github.io/Safely/)
 
 <h1>Summary</h1>
