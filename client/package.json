@@ -6,7 +6,7 @@
   "engines": {
     "node": "16.x"
   },
-  "homepage": "https://nikudon612.github.io/safely",
+  "homepage": "https://nikudon612.github.io/Safely",
   "dependencies": {
     "@react-google-maps/api": "^2.7.0",
     "@testing-library/jest-dom": "^5.13.0",
