@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/safely/static/css/main.37bd8abc.chunk.css",
-    "main.js": "/safely/static/js/main.dbae1391.chunk.js",
-    "main.js.map": "/safely/static/js/main.dbae1391.chunk.js.map",
-    "runtime-main.js": "/safely/static/js/runtime-main.0fe429b6.js",
-    "runtime-main.js.map": "/safely/static/js/runtime-main.0fe429b6.js.map",
-    "static/css/2.ae85731f.chunk.css": "/safely/static/css/2.ae85731f.chunk.css",
-    "static/js/2.7a652d42.chunk.js": "/safely/static/js/2.7a652d42.chunk.js",
-    "static/js/2.7a652d42.chunk.js.map": "/safely/static/js/2.7a652d42.chunk.js.map",
-    "static/js/3.44be0fe8.chunk.js": "/safely/static/js/3.44be0fe8.chunk.js",
-    "static/js/3.44be0fe8.chunk.js.map": "/safely/static/js/3.44be0fe8.chunk.js.map",
-    "index.html": "/safely/index.html",
-    "static/css/2.ae85731f.chunk.css.map": "/safely/static/css/2.ae85731f.chunk.css.map",
-    "static/css/main.37bd8abc.chunk.css.map": "/safely/static/css/main.37bd8abc.chunk.css.map",
-    "static/js/2.7a652d42.chunk.js.LICENSE.txt": "/safely/static/js/2.7a652d42.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/safely/static/media/GD1.01a46050.jpg"
+    "main.css": "/Safely/static/css/main.f8c591fd.chunk.css",
+    "main.js": "/Safely/static/js/main.dbae1391.chunk.js",
+    "main.js.map": "/Safely/static/js/main.dbae1391.chunk.js.map",
+    "runtime-main.js": "/Safely/static/js/runtime-main.32c0a645.js",
+    "runtime-main.js.map": "/Safely/static/js/runtime-main.32c0a645.js.map",
+    "static/css/2.ae85731f.chunk.css": "/Safely/static/css/2.ae85731f.chunk.css",
+    "static/js/2.7a652d42.chunk.js": "/Safely/static/js/2.7a652d42.chunk.js",
+    "static/js/2.7a652d42.chunk.js.map": "/Safely/static/js/2.7a652d42.chunk.js.map",
+    "static/js/3.44be0fe8.chunk.js": "/Safely/static/js/3.44be0fe8.chunk.js",
+    "static/js/3.44be0fe8.chunk.js.map": "/Safely/static/js/3.44be0fe8.chunk.js.map",
+    "index.html": "/Safely/index.html",
+    "static/css/2.ae85731f.chunk.css.map": "/Safely/static/css/2.ae85731f.chunk.css.map",
+    "static/css/main.f8c591fd.chunk.css.map": "/Safely/static/css/main.f8c591fd.chunk.css.map",
+    "static/js/2.7a652d42.chunk.js.LICENSE.txt": "/Safely/static/js/2.7a652d42.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/Safely/static/media/GD1.01a46050.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.0fe429b6.js",
+    "static/js/runtime-main.32c0a645.js",
     "static/css/2.ae85731f.chunk.css",
     "static/js/2.7a652d42.chunk.js",
-    "static/css/main.37bd8abc.chunk.css",
+    "static/css/main.f8c591fd.chunk.css",
     "static/js/main.dbae1391.chunk.js"
   ]
 }
