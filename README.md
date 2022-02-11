@@ -1,5 +1,5 @@
 ## Live Deployment
-[Safely](https://nikudon612.github.io/Safely/)
+- [Safely](https://nikudon612.github.io/Safely/)
 
 ## Summary
 Safely is an App that provides COVID-19 testing site data to our users. 
