@@ -18,3 +18,6 @@ Please reach out if you have any comments or concerns. We would love to hear you
 Thank you for your time browsing our program and this README :)
 
 -Safely Team
+
+
+![safelyss](https://user-images.githubusercontent.com/87031638/153924683-fc9bdec5-953b-46bc-8b72-19388ec91e08.jpg)
