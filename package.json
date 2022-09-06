@@ -8,7 +8,7 @@
     "start": "npm start --prefix client",
     "predeploy": "npm run build",
     "build": "npm install --prefix client && npm run build --prefix client",
-    "deploy": "gh-pages -d build", 
+    "deploy": "gh-pages -d dist",
     "clean": "rm -rf public",
     "heroku-postbuild": "npm run clean && npm run build && npm run deploy"
   },
